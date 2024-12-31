@@ -12,13 +12,13 @@ import ourquilane from "./images/IMG_1541 (1) 1 (1).png";
 
 const Sponsors = () => {
   return (
-    <section className=" text-Monotone-White p-[24px] pt-[35px] md:p-[80px] lg:p-[100px] flex justify-center items-center flex-col gap-10 lg:gap-20">
+    <section className=" text-Monotone-White p-[24px] pt-[35px] md:p-[80px] lg:p-[100px] flex justify-center items-center flex-col gap-12 lg:gap-20">
       <h2
-        className={` ${hubotSans.className} font-semibold capitalize  text-3xl md:text-3xl lg:text-5xl leading-[56px] hubotSans.className`}
+        className={` ${hubotSans.className} font-semibold capitalize  text-3xl md:text-4xl lg:text-5xl leading-[56px]`}
       >
         sponsored by
       </h2>
-      <div className=" grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-16  items-center">
+      <div className=" grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-16  items-center">
         <Image
           src={asa} // sponsors images
           alt="asa-img"
