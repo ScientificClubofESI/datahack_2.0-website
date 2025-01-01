@@ -8,6 +8,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        hubotSans: ["Hubot Sans", "sans-serif"],
+        aspekta: ["Aspekta", "sans-serif"],
+      },
       colors: {
         background: {
           Light: "#F0F7FF",
