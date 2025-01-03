@@ -82,7 +82,7 @@ const SkillsInterests = () => {
           </label>
           <p className='text-gray-400 text-sm mb-2 pb-1'>List up to 4 skills you consider yourself proficient at.</p>
           <input
-            className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.skills ? 'border-red-500' : 'border-gray-100'}
+            className={`w-full h-[40px] rounded-md border p-4 font-aspekta 
             max-sm:h-12 max-sm:text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='text'
             name='skills'
@@ -98,7 +98,7 @@ const SkillsInterests = () => {
           </label>
           <p className='text-gray-400 text-sm mb-2 pb-1'>Don't worry if this is your first hackathon; your motivation is what truly matters.</p>
           <input
-            className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.hackathonsAttended ? 'border-red-500' : 'border-gray-100'}
+            className={`w-full h-[40px] rounded-md border p-4 font-aspekta 
             max-sm:h-12 max-sm:text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='number'
             name='hackathonsAttended'
