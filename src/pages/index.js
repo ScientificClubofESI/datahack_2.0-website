@@ -15,17 +15,8 @@ import Workshops from "@/components/workshops";
 export default function Home() {
   return (
   
-  <div className=" bg-background-Dark   h-screen  ">
-    <Navbar/>
-    <HomeSection/>
-    <About/>
-    <FAQ/>
-    <Mentors/>
-    <Agenda/>
-    <Partners/>
-    <Sponsors/>
-    <RegistrationComplete/>
-    <RegistrationForm/>
+  <div className=" bg-background-Dark   min-h-screen  ">
+      <Workshops/>
   </div>
 
   );

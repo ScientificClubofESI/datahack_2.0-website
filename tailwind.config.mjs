@@ -8,7 +8,11 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-border': 'linear-gradient(90deg, rgb(111, 6, 193) 0%, rgb(78, 164, 249) 50%, rgb(54, 217, 255) 100%)',
+      },
       colors: {
+        
         background: {
           Light: "#F0F7FF",
           Dark: "#14161F",
