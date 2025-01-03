@@ -16,23 +16,16 @@ export default function Home() {
   return (
   
   <div className=" bg-background-Dark   h-screen  ">
-
-    {/*
     <Navbar/>
     <HomeSection/>
     <About/>
-    */}
     <FAQ/>
-    {/*
     <Mentors/>
     <Agenda/>
     <Partners/>
     <Sponsors/>
     <RegistrationComplete/>
     <RegistrationForm/>
-    */}
-
   </div>
-
   );
 }
