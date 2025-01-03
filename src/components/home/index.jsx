@@ -3,7 +3,7 @@ import React from 'react';
 
 const HomeSection = ()=>{
   return(
-   <section className=' text-Monotone-White'>
+   <section className='text-Monotone-White'>
     Home
    </section>
   );

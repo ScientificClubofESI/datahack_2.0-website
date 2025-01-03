@@ -15,7 +15,7 @@ import Workshops from "@/components/workshops";
 export default function Home() {
   return (
   
-  <div className=" bg-background-Dark   h-screen  ">
+  <div className=" bg-background-Dark  h-screen ">
     <Navbar/>
     <HomeSection/>
     <About/>
