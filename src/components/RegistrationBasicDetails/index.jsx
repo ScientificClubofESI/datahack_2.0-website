@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const RegistrationBasicDetails = () => {
   const [formData, setFormData] = useState({
@@ -15,11 +15,22 @@ const RegistrationBasicDetails = () => {
     phone: false
   });
 
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
+    const isValid = formData.firstName.trim() !== '' &&
+                   formData.lastName.trim() !== '' &&
+                   formData.email.trim() !== '' &&
+                   formData.phone.trim() !== '';  // Added phone validation
+    setIsFormValid(isValid);
+  }, [formData]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    if (name !== 'phone' && value.trim() === '') {
+    // Validate all required fields including phone
+    if (value.trim() === '') {
       setErrors({ ...errors, [name]: true });
     } else {
       setErrors({ ...errors, [name]: false });
@@ -31,7 +42,7 @@ const RegistrationBasicDetails = () => {
       firstName: formData.firstName.trim() === '',
       lastName: formData.lastName.trim() === '',
       email: formData.email.trim() === '',
-      phone: false // No validation for phone
+      phone: formData.phone.trim() === ''  // Fixed phone validation
     };
     setErrors(newErrors);
   };
@@ -53,10 +64,10 @@ const RegistrationBasicDetails = () => {
       </div>
 
       {/* Mobile Header */}
-      <div className='hidden max-sm:block w-full bg-[#111111]'>
+      <div className='hidden max-sm:block w-full bg-background-Dark'>
         <div className='w-full h-full relative'>
           <div className='w-1/6 h-[4px] bg-gradient-to-r absolute top-0 left-0 from-purple-500 to-blue-300'></div>
-          <div className='flex justify-between items-center px-4 py-5 border-b border-[#2a2a2a]'>
+          <div className='flex justify-between items-center px-4 py-5'>
             <p className='text-violet-500 text-lg font-medium'>
               Basic Details
             </p>
@@ -73,7 +84,7 @@ const RegistrationBasicDetails = () => {
           </label>
           <input
             className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.firstName ? 'border-red-500' : 'border-gray-100'}
-            max-sm:h-12 max-sm:text-white max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
+            max-sm:h-12 max-sm:text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='text'
             name='firstName'
             value={formData.firstName}
@@ -88,7 +99,7 @@ const RegistrationBasicDetails = () => {
           </label>
           <input
             className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.lastName ? 'border-red-500' : 'border-gray-100'}
-            max-sm:h-12 max-sm:text-white max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
+            max-sm:h-12 max-sm:text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='text'
             name='lastName'
             value={formData.lastName}
@@ -103,7 +114,7 @@ const RegistrationBasicDetails = () => {
           </label>
           <input
             className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.email ? 'border-red-500' : 'border-gray-100'}
-            max-sm:h-12 max-sm:text-white max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
+            max-sm:h-12 max-sm:text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='email'
             name='email'
             value={formData.email}
@@ -117,8 +128,8 @@ const RegistrationBasicDetails = () => {
             Phone Number <span className='text-red-500'>*</span>
           </label>
           <input
-            className={`w-full h-[40px] rounded-md border p-4 font-aspekta border-gray-100
-            max-sm:h-12 max-sm:text-white max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
+            className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.phone ? 'border-red-500' : 'border-gray-100'}
+            max-sm:h-12 max-sm:text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='text'
             name='phone'
             value={formData.phone}
@@ -131,9 +142,10 @@ const RegistrationBasicDetails = () => {
       {/* Button Container */}
       <div className='w-full h-screen flex justify-between items-center p-14 max-sm:p-4 max-sm:h-auto'> 
         <button
-          className='ml-auto w-[198px] h-[40px] bg-purple-600 text-white rounded-md p-2 gap-4 items-center justify-center flex flex-row font-size-20px font-semibold 
-          max-sm:w-12 max-sm:h-12 max-sm:bg-violet-600 max-sm:rounded-xl max-sm:hover:bg-violet-700 max-sm:transition-colors'
+          className={`ml-auto w-[198px] h-[40px] text-white rounded-md p-2 gap-4 items-center justify-center flex flex-row font-size-20px font-semibold 
+          max-sm:w-12 max-sm:h-12 max-sm:rounded-xl max-sm:transition-colors ${isFormValid ? 'bg-purple-600 hover:bg-violet-700' : 'bg-tritary-900 cursor-not-allowed'}`}
           onClick={handleValidation}
+          disabled={!isFormValid}
         >
           <span className="max-sm:hidden">Next</span>
           <img src="/images/arrow-right.png" className='w-[24px] h-[24px]' alt="Next" />
