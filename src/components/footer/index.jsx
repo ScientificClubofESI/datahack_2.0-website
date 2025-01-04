@@ -13,7 +13,7 @@ import Assets2 from "../../../public/images/Assets2.svg";
 
 const Cseanddatahacklogo = () => {
   return (
-    <div className="flex space-x-12 md:space-x-12 justify-center">
+    <div className="flex space-x-[7rem] md:space-x-12 justify-center">
       <Image src={CSElogo} alt="CSE Logo" width={160} height={160} />
       <Image src={Datahack} alt="Datahack Logo" width={160} height={160} />
     </div>
@@ -36,14 +36,16 @@ const Footer = () => {
           }}
         />
         {/* For mobile: Override background size */}
-        <div className="md:block absolute inset-0 opacity-20" style={{
+        <div
+          className="md:block absolute inset-0 opacity-20"
+          style={{
             backgroundImage: `url(${Assets.src})`,
             backgroundSize: '150%', // Apply for smaller screens
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center -25%',
-        }} />
-        
-        {/* Background Images for Assets1 and Assets2 (no changes needed) */}
+          }}
+        />
+        {/* Background Images for Assets1 and Assets2 */}
         <div
           className="absolute inset-0 bg-cover opacity-40 md:bg-[left_5%_top_25%]"
           style={{
@@ -70,29 +72,32 @@ const Footer = () => {
           <Cseanddatahacklogo />
         </div>
 
-        <div className='backdrop-blur-sm sm:h-[9.2rem] md:h-[12rem] md:w-[60%] md:ml-[4rem]'>
+        <div className="backdrop-blur-sm sm:h-[9.2rem] md:h-[12rem] md:ml-[4rem]">
           {/* Contact Section */}
-        <div className="flex flex-col md:flex-row items-center ml-[10rem]	 md:ml-[35rem] md:items-start mb-8 md:mb-0 relative ">
-          <div className="flex items-center justify-between relative">
-            <div className="font-semibold text-Monotone-white text-right ">
-              <p className="text-lg md:text-2xl md:text-2xl mb-5">Still Have Questions About</p>
-              <p className="text-lg md:text-3xl mb-5 font-extrabold md:font-semibold">Contact Us</p>
-              <p className="text-xs md:text-sm mb-2 font-normal md:font-semibold">
-                By email <a href="mailto:cse@esi.dz">cse@esi.dz</a>
-              </p>
-              <p className="text-xs md:text-sm font-normal md:font-semibold">Or on social media</p>
+          <div className="flex flex-col md:flex-row items-start md:items-start mr-[12rem] md:mr-[0rem] md:ml-[35rem] mb-8 md:mb-0 relative">
+            {/* Wrapper for the line and text */}
+            <div className="flex items-start md:items-center">
+              {/* Vertical Line for Mobile */}
+              <div className="block md:hidden border-l-[3px] border-Primary-500 h-[9.2rem] mr-3"></div>
+              
+              {/* Text Section */}
+              <div className="font-semibold text-Monotone-white text-left md:text-right">
+                <p className="text-lg md:text-2xl md:text-2xl mb-5">Still Have Questions About</p>
+                <p className="text-lg md:text-3xl mb-5 font-extrabold md:font-semibold">Contact Us</p>
+                <p className="text-xs md:text-sm mb-2 font-normal md:font-semibold">
+                  By email <a href="mailto:cse@esi.dz">cse@esi.dz</a>
+                </p>
+                <p className="text-xs md:text-sm font-normal md:font-semibold">Or on social media</p>
+              </div>
             </div>
-            {/* Vertical Line for Mobile */}
-            <div className="border-l-[3px] border-Primary-500 h-[9.2rem] block md:hidden ml-3"></div>
-             {/* Vertical Line for Desktop */}
-          <div className="hidden md:block border-l-[3px] border-Primary-500 h-[12rem] ml-[1rem]"></div>
+
+            {/* Vertical Line for Desktop */}
+            <div className="hidden md:block border-l-[3px] border-Primary-500 h-[12rem] ml-[1rem]"></div>
           </div>
-        </div>
         </div>
 
         {/* Social Media Links */}
         <div className="flex flex-col items-center space-y-4 md:items-start md:flex-row md:space-x-8 md:mr-[5rem]">
-         
           {/* Social Media Icons */}
           <div className="flex space-x-12 md:space-x-0 md:flex-col md:space-y-[0.83rem]">
             <a href="https://www.facebook.com/club.scientifique.esi" target="_blank" rel="noopener noreferrer">
