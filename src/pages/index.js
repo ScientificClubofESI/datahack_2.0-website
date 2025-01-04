@@ -16,7 +16,7 @@ export default function Home() {
   return (
   
   <div className=" bg-background-Dark   h-screen  ">
-    <Navbar/>
+    {/* <Navbar/>
     <HomeSection/>
     <About/>
     <FAQ/>
@@ -24,7 +24,7 @@ export default function Home() {
     <Agenda/>
     <Partners/>
     <Sponsors/>
-    <RegistrationComplete/>
+    <RegistrationComplete/> */}
     <RegistrationForm/>
   </div>
 
