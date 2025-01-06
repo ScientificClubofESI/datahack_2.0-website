@@ -8,6 +8,16 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'custom-glow': '0px 0px 40px rgba(199, 131, 251, 0.2)',
+      },
+      backgroundImage: {
+        'image-mentors': "url('/images/mentors/test-shapes.png')",
+      },
+      fontFamily: {
+        hubotSans: ["Hubot Sans", "sans-serif"],
+        aspekta: ["Aspekta", "sans-serif"],
+      },
       colors: {
         background: {
           Light: "#F0F7FF",
