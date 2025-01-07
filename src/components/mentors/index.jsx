@@ -41,10 +41,9 @@ const MentorsSection = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
 
-  const SLIDE_DURATION = 7000; // Total time to complete progress bar
+  const SLIDE_DURATION = 7000;
   const progressInterval = useRef(null);
 
-  // Automatic Progress and Mentor Change
   useEffect(() => {
     if (isPlaying) {
       progressInterval.current = setInterval(() => {
@@ -63,47 +62,57 @@ const MentorsSection = () => {
     return () => clearInterval(progressInterval.current);
   }, [isPlaying, currentMentor]);
 
-  // Switch Mentor Manually
   const handleMentorChange = (index) => {
     setCurrentMentor(index);
     setProgress(0);
   };
 
-  // Pause/Play Handler
   const togglePlayPause = () => setIsPlaying(!isPlaying);
 
-  // Progress Bar Styles
   const progressBarStyle = {
     width: `${progress}%`,
   };
 
   return (
-    <div className="flex flex-col w-full gap-16 py-[120px] bg-[#020203] relative bg-image-mentors bg-no-repeat bg-center bg-cover">
+    <div className="flex flex-col w-full gap-16 py-[120px] 2lg:py-[120px] bg-[#020203] relative bg-image-mentors bg-no-repeat bg-center bg-cover">
       <div className="absolute inset-0 bg-Primary-500 opacity-[0.03]"></div>
-      <h1 className="text-5xl font-semibold mx-auto text-white">Mentors</h1>
+      <h1 className="text-2xl 2lg:text-5xl font-semibold mx-auto text-white">Mentors</h1>
 
-      <div className="flex gap-10 px-20">
+      <div className="flex flex-col-reverse 2lg:flex-row gap-10 px-4 2lg:px-20">
         {/* Info Section */}
-        <div className="flex flex-col flex-1 gap-6 px-16 py-6 h-[250px] border-r-4 bg-gradient-to-r from-transparent to-[#03346620] border-Primary-500 backdrop-blur-md text-right items-end">
-          <div className="flex flex-col gap-2 text-right items-end">
-            <h2 className="text-2xl w-fit font-semibold font-hubotSans bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] bg-clip-text text-transparent">
+        <div className="flex flex-col flex-1 gap-6 px-6 2lg:px-16 py-6 mb-8 2lg:mb-14 border-r-4 bg-gradient-to-r from-transparent to-[#03346620] border-Primary-500 backdrop-blur-md text-center 2lg:text-right items-center 2lg:items-end">
+          <div className="flex-col gap-2 text-center hidden 2lg:flex 2lg:text-right items-center 2lg:items-end">
+            <h2 className="text-xl 2lg:text-2xl w-fit font-semibold font-hubotSans bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] bg-clip-text text-transparent">
               {mentors[currentMentor].name}
             </h2>
-            <h3 className="text-base text-Primary-300 font-aspekta font-normal">
+            <h3 className="text-sm 2lg:text-base text-Primary-300 font-aspekta font-normal">
               {mentors[currentMentor].title}
             </h3>
-            <h3 className="text-base text-neutral-300 font-aspekta font-normal">
+            <h3 className="text-sm 2lg:text-base text-neutral-300 font-aspekta font-normal">
               {mentors[currentMentor].role}
             </h3>
           </div>
-          <p className="text-sm text-neutral-400 font-aspekta font-light max-w-[680px]">
+          <p className="text-sm text-neutral-400 font-aspekta font-light">
             {mentors[currentMentor].description}
           </p>
         </div>
 
+        {/* Info Section (Mobile) */}
+        <div className="flex-col order-10 gap-2 text-center flex 2lg:hidden items-center">
+            <h2 className="text-xl w-fit font-semibold font-hubotSans bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] bg-clip-text text-transparent">
+              {mentors[currentMentor].name}
+            </h2>
+            <h3 className="text-sm text-Primary-300 font-aspekta font-normal">
+              {mentors[currentMentor].title}
+            </h3>
+            <h3 className="text-sm text-neutral-300 font-aspekta font-normal">
+              {mentors[currentMentor].role}
+            </h3>
+        </div>
+
         {/* Mentor Image & Controls */}
-        <div className="flex flex-col items-center gap-5">
-          <div className="p-[1px] shadow-custom-glow w-[256px] h-[250px] bg-gradient-to-l from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] rounded-sm">
+        <div className="flex flex-col items-center gap-5  ">
+          <div className="p-[1px] shadow-custom-glow w-[200px] 2lg:w-[256px] h-[200px] 2lg:h-[250px] bg-gradient-to-l from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] rounded-sm">
               <img 
                 src={mentors[currentMentor].image}
                 alt={mentors[currentMentor].name}
@@ -111,7 +120,7 @@ const MentorsSection = () => {
               />
           </div>
 
-          <div className="flex flex-col gap-3 w-full z-10">
+          <div className="flex flex-col gap-3 w-full max-w-[200px] 2lg:max-w-full z-10">
             {/* Progress Bar */}
             <div className="w-full h-1 bg-neutral-800 rounded-full">
               <div className="h-full bg-Primary-500 rounded-2xl" style={progressBarStyle} />
@@ -153,8 +162,8 @@ const MentorsSection = () => {
           </div>
         </div>
 
-        {/* Thumbnails Column */}
-        <div className="flex flex-col gap-4 mr-20 z-10">
+        {/* Desktop Thumbnails Column */}
+        <div className="flex flex-row -order-first 2lg:-order-none justify-center 2lg:flex-col gap-4 2lg:mr-20 z-10">
           {mentors.map((mentor, index) => (
             <button
               key={mentor.id}
