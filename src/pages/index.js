@@ -26,6 +26,8 @@ export default function Home() {
     <Sponsors/>
     <RegistrationComplete/>
     <RegistrationForm/>
+    <Workshops/>
+    <Footer/>
   </div>
 
   );
