@@ -1,5 +1,6 @@
 import About from "@/components/about";
 import Agenda from "@/components/agenda";
+import BackgroundShapes from "@/components/backGround";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/footer";
 import HomeSection from "@/components/home";
@@ -15,18 +16,23 @@ import Workshops from "@/components/workshops";
 export default function Home() {
   return (
   
-  <div className=" bg-background-Dark  h-screen ">
-    <Navbar/>
+
+
+  <div className=" ">
+    <BackgroundShapes/>
+
     <HomeSection/>
-    <About/>
-    <FAQ/>
+   
     <Mentors/>
-    <Agenda/>
+    <FAQ/>
     <Partners/>
     <Sponsors/>
-    <RegistrationComplete/>
-    <RegistrationForm/>
-  </div>
+    <Workshops/>
+    <Agenda/>
+    <Footer/>
 
+  </div>
   );
 }
+
+
