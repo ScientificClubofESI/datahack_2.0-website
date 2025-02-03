@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
+
   const faqs = [
     {
       question: 'What is DataHack event ?',
@@ -70,6 +71,7 @@ const FAQ = () => {
         </div>
       </div>
     </div>
+
   );
 };
 

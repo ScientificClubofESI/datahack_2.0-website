@@ -24,6 +24,7 @@ const Footer = () => {
           />
         </div>
 
+
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 flex-grow w-full max-w-80 lg:w-fit lg:max-w-full">
           {/* Contact Section */}
           <div className="flex flex-col items-start lg:items-end justify-center py-4 gap-2 lg:gap-6 pl-6 lg:pr-10 lg:pl-0 border-l-2 lg:border-l-0 lg:border-r-4 bg-gradient-to-l lg:bg-gradient-to-r from-transparent to-[#03346620] border-Primary-500 backdrop-blur-md text-Monotone-White flex-grow w-full">
@@ -93,6 +94,7 @@ const Footer = () => {
         Copyright © 2025 Club Scientifique de l'ESI. All Rights Reserved.
       </div>
     </footer>
+
   );
 };
 

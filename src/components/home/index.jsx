@@ -4,6 +4,7 @@ import Image from "next/image";
 const HomeSection = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
+
   useEffect(() => {
     const handleScroll = () => {
       const position = window.scrollY;
@@ -73,6 +74,7 @@ const HomeSection = () => {
         </div>
       </div>
     </section>
+
   );
 };
 

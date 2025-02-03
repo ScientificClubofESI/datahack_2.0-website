@@ -8,6 +8,7 @@ import RightIcon from '../../../public/icons/left_arrow_icon.svg';
 const Agenda = () => {
   const days = [3, 1, 2]; // Days array
 
+
   // States for current index and pause/play toggle
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -128,6 +129,7 @@ const Agenda = () => {
       </div>
 
     </section>
+
   );
 };
 

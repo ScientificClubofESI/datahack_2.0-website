@@ -17,8 +17,10 @@ export default function Home() {
   return (
   
 
+
   <div className=" ">
     <BackgroundShapes/>
+
     <HomeSection/>
    
     <Mentors/>
