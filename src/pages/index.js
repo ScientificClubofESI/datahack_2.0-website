@@ -18,18 +18,25 @@ export default function Home() {
   
 
 
+
   <div className=" ">
     <BackgroundShapes/>
     <Navbar/>
+
     <HomeSection/>
    
     <Mentors/>
     <FAQ/>
     <Partners/>
     <Sponsors/>
+
+    <RegistrationComplete/> 
+    <RegistrationForm/>
+
     <Workshops/>
     <Agenda/>
     <Footer/>
+
 
   </div>
   );
