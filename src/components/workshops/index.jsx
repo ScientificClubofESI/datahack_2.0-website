@@ -21,7 +21,7 @@ const Workshops = ()=>{
     return () => clearTimeout(timer)
   }, [activeWorkshop, index])
   return(
-    <main className='text-Monotone-White pt-12 xl:pt-20  flex flex-col justify-center gap-16 items-center  bg-[#020203] relative bg-image-mentors bg-no-repeat bg-center bg-cover'>
+    <main className='text-Monotone-White pt-12 xl:pt-20  flex flex-col justify-center gap-16 items-center  relative '>
         <h1 className='text-3xl font-medium xl:font-bold xl:text-5xl '>Workshops</h1>
         <section className='flex flex-col justify-center gap-10 xl:gap-12 xl:flex-row xl:justify-around xl:items-center'>
             <section className='flex justify-center items-center'>

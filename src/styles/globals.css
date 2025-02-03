@@ -15,8 +15,6 @@
 
   
   body {
-    background: url('/images/bg.png') no-repeat center center fixed;
-    background-size: cover; /* Ensures the image covers the entire background */
     background-color: #020203;
   }
 

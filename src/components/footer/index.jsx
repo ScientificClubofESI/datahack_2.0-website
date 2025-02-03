@@ -8,7 +8,7 @@ import Linkedin from "../../../public/images/footer/linkedin.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#020203] relative bg-image-mentors bg-no-repeat bg-center bg-cover flex flex-col items-center py-6 pt-40 gap-20">
+    <footer className="relative  flex flex-col items-center py-6 pt-40 gap-20">
       <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-20 w-full px-6 lg:px-24">
         {/* Logos */}
         <div className="flex justify-between items-center flex-grow lg:gap-16 lg:flex-grow-0 w-full max-w-80 lg:w-fit lg:max-w-full">

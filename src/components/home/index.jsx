@@ -17,7 +17,7 @@ const HomeSection = () => {
   const borderGradient = `rgb(${136 - scrollProgress * 50}, ${51 + scrollProgress * 100}, ${255 - scrollProgress * 50})`;
 
   return (
-    <section className="relative bg-background-Dark text-white min-h-screen flex items-center justify-center px-4 md:px-20 overflow-hidden">
+    <section className="relative  text-white min-h-screen flex items-center justify-center px-4 md:px-20 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Main Content */}
