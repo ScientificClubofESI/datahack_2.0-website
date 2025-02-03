@@ -17,12 +17,8 @@ export default function Home() {
   
 
   <div className=" bg-background-Dark   h-screen  ">
-    <Navbar/>
-    <HomeSection/>
-    <About/>
-    <FAQ/>
-    <Mentors/>
     <Agenda/>
+
     <Partners/>
     <Sponsors/>
     <RegistrationComplete/>
