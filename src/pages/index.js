@@ -17,13 +17,16 @@ export default function Home() {
   
 
   <div className=" bg-background-Dark   h-screen  ">
-    <Agenda/>
-
+    <HomeSection/>
+    <About/>  
+    <Mentors/>
+    <FAQ/>
+    <RegistrationForm/>
+    <RegistrationComplete/>
     <Partners/>
     <Sponsors/>
-    <RegistrationComplete/>
-    <RegistrationForm/>
     <Workshops/>
+    <Agenda/>
     <Footer/>
 
   </div>
