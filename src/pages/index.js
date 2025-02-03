@@ -15,8 +15,17 @@ import Workshops from "@/components/workshops";
 export default function Home() {
   return (
   
+
   <div className=" bg-background-Dark   h-screen  ">
     <Agenda/>
+
+    <Partners/>
+    <Sponsors/>
+    <RegistrationComplete/>
+    <RegistrationForm/>
+    <Workshops/>
+    <Footer/>
+
   </div>
 
   );
