@@ -8,6 +8,7 @@ export default {
   ],
   theme: {
     extend: {
+
       screens: {
         '2lg': '1089px',
         '3xl': '1716px',
@@ -22,8 +23,10 @@ export default {
       fontFamily: {
         hubotSans: ["Hubot Sans", "sans-serif"],
         aspekta: ["Aspekta", "sans-serif"],
+
       },
       colors: {
+        
         background: {
           Light: "#F0F7FF",
           Dark: "#14161F",
