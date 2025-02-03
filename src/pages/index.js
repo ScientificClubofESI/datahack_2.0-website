@@ -20,7 +20,7 @@ export default function Home() {
 
   <div className=" ">
     <BackgroundShapes/>
-
+    <Navbar/>
     <HomeSection/>
    
     <Mentors/>

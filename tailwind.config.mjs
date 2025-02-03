@@ -29,7 +29,7 @@ export default {
         
         background: {
           Light: "#F0F7FF",
-          Dark: "#14161F",
+          Dark: "#020203",
         },
         Monotone: {
           White: "#FFFFFF",

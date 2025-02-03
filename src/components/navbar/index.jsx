@@ -62,7 +62,7 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="top-0 z-10 sticky text-white">
+    <nav className="top-0 z-10 sticky text-white  font-bold">
       <div className="flex justify-between items-center bg-background-Dark md:bg-transparent px-8 h-20">
         <div className="flex items-center">
           <img
