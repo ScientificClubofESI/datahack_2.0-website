@@ -168,6 +168,7 @@ const Education = ({ handleNext, handleBack }) => {
 
                 <div className="flex justify-between pt-12 md:pt-0 md:mt-5 bg-black  ">
                     <button 
+                    onClick={handleBack}
                         type="button" 
                         className="bg-purple-700 text-white px-6 py-2 rounded flex items-center justify-center ml-7 md:ml-0  w-16 h-7"
                     >

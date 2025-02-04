@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const RegistrationBasicDetails = () => {
+const RegistrationBasicDetails = ({ handleNext, handleBack }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -14,9 +14,16 @@ const RegistrationBasicDetails = () => {
     email: false,
     phone: false
   });
+  const [showErrors, setShowErrors] = useState(false);
+  
 
   const [isFormValid, setIsFormValid] = useState(false);
-
+  const isFormComplete = () => {
+    return formData.firstName.trim() !== '' &&
+    formData.lastName.trim() !== '' &&
+    formData.email.trim() !== '' &&
+    formData.phone.trim() !== '';
+};
   useEffect(() => {
     const isValid = formData.firstName.trim() !== '' &&
                    formData.lastName.trim() !== '' &&
@@ -24,7 +31,32 @@ const RegistrationBasicDetails = () => {
                    formData.phone.trim() !== '';  // Added phone validation
     setIsFormValid(isValid);
   }, [formData]);
+  const validateForm = () => {
+    let newErrors = {};
 
+    // Validate firstName
+    if (!formData.firstName) {
+      newErrors.firstName = "Please enter your first Name";
+    }
+
+    // Validate major
+    if (!formData.lastName) {
+      newErrors.lastName = "Please enter your Last name";
+    }
+
+    // Validate degree
+    if (!formData.email) {
+      newErrors.email = "Please enter an email";
+    }
+
+    // Validate graduation year
+    if (!formData.phone) {
+      newErrors.phone = "Please enter your phone number";
+    } 
+    setErrors(newErrors);
+    setShowErrors(true);
+    return Object.keys(newErrors).length === 0;
+  };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -59,7 +91,6 @@ const RegistrationBasicDetails = () => {
               </p>
             </div>
           </div>
-          <button className='text-white text-3xl mr-6'>&times;</button>
         </div>
       </div>
 
@@ -140,17 +171,31 @@ const RegistrationBasicDetails = () => {
       </div>
 
       {/* Button Container */}
-      <div className='w-full h-screen flex justify-between items-center p-14 max-sm:p-4 max-sm:h-auto'> 
-        <button
-          className={`ml-auto w-[198px] h-[40px] text-white rounded-md p-2 gap-4 items-center justify-center flex flex-row font-size-20px font-semibold 
-          max-sm:w-12 max-sm:h-12 max-sm:rounded-xl max-sm:transition-colors ${isFormValid ? 'bg-purple-600 hover:bg-violet-700' : 'bg-tritary-900 cursor-not-allowed'}`}
-          onClick={handleValidation}
-          disabled={!isFormValid}
-        >
-          <span className="max-sm:hidden">Next</span>
-          <img src="/images/arrow-right.png" className='w-[24px] h-[24px]' alt="Next" />
-        </button>
-      </div>
+      <div className="flex justify-between pt-12 md:pt-0 md:mt-5 bg-black  ">
+                    <button 
+                        onClick={handleBack}
+                        type="button" 
+                        className="bg-purple-700 text-white px-6 py-2 rounded flex items-center justify-center ml-7 md:ml-0  w-16 h-7"
+                    >
+                        <span className="mr-2 text-sm rotate-[180deg] mt-2 flex  ">➜</span> 
+                    </button>
+
+
+  <button 
+    type="button"
+    onClick={() => {
+        if (validateForm()) {
+          handleNext();
+        }
+      }} 
+    disabled={!isFormComplete()}
+    className={`bg-purple-700 text-white flex px-6 py-2 rounded items-center justify-center h-7 w-16 md:w-44 ${!isFormComplete() ? 'opacity-50 cursor-not-allowed' : ''} mb-24 mr-7 md:mr-0`}
+>    
+    <span className='hidden md:flex'>Next</span>
+    <span className="ml-2 text-sm">➜</span>
+</button>
+                   
+                </div>
     </section>
   );
 }
