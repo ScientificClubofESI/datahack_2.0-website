@@ -1,3 +1,4 @@
+import React from 'react';
 export default function InputFrame() {
     return (
       <div className="w-full bg-transparent fixed top-0 left-0 p-8">

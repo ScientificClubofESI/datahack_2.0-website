@@ -1,3 +1,4 @@
+
 export default function Team() {
     return (
       <div className="w-full bg-transparent fixed top-0 left-0 p-8">
