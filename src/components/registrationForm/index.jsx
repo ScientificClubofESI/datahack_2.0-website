@@ -23,13 +23,12 @@ const FormController = ({ onClose }) => {
           <span className="text-white  font-bold text-2xl">X</span>
         </div>
 
-       {/* {step === 0 && <RegistrationBasicDetails handleNext={handleNext} />}*/}
-      
-        {/*{step === 1 && <SkillsInterests handleBack={handleBack} handleNext={handleNext} />}*/}
+        {step === 0 && <RegistrationBasicDetails handleNext={handleNext} />}
+        {step === 1 && <SkillsInterests handleBack={handleBack} handleNext={handleNext} />}
         {step === 2 && <Education handleBack={handleBack} handleNext={handleNext} />}
         {step === 3 && <Links handleBack={handleBack} handleNext={handleNext} />}
-        {step === 0 && <InputFrame handleBack={handleBack} handleNext={handleNext} />}
-        {step === 1 && <Team handleBack={handleBack} handleNext={handleNext} />}
+        {step === 4 && <InputFrame handleBack={handleBack} handleNext={handleNext} />}
+        {step === 5 && <Team handleBack={handleBack} handleNext={handleNext} />}
        
       </div>
     </div>

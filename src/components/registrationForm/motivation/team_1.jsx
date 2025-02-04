@@ -5,7 +5,28 @@ export default function Team({ handleNext, handleBack }) {
   const [hasTeam, setHasTeam] = useState(true); 
   const [joinTeam, setjoinTeam] = useState(true); 
   const [chaine, setChaine] = useState('code'); 
+  const [errors, setErrors] = useState({});
+  const [showErrors, setShowErrors] = useState(false);
 
+  const [formData, setFormData] = useState({
+    team: "",
+    join: "",
+  });
+
+ 
+  const validateForm = () => {
+    let newErrors = {};
+    
+    setErrors(newErrors);
+    setShowErrors(true);
+    return Object.keys(newErrors).length === 0;
+};
+
+
+
+const isFormComplete = () => {
+    return formData.university !== '' && formData.major !== '' && formData.degree !== '' && formData.graduationYear !== '';
+};
   const handleYes = () => {
     setHasTeam(true);
   };
@@ -103,6 +124,31 @@ export default function Team({ handleNext, handleBack }) {
       )}
       
         </div>
+        <div className="flex justify-between pt-12 md:pt-0 md:mt-5 bg-black  ">
+                    <button 
+                    onClick={handleBack}
+                        type="button" 
+                        className="bg-purple-700 text-white px-6 py-2 rounded flex items-center justify-center ml-7 md:ml-0  w-16 h-7"
+                    >
+                        <span className="mr-2 text-sm rotate-[180deg] mt-2 flex  ">➜</span> 
+                    </button>
+
+
+<button 
+    type="button"
+    onClick={() => {
+        if (validateForm()) {
+          handleNext();
+        }
+      }} 
+    disabled={!isFormComplete()}
+    className={`bg-purple-700 text-white flex px-6 py-2 rounded items-center justify-center h-7 w-16 md:w-44 ${!isFormComplete() ? 'opacity-50 cursor-not-allowed' : ''} mb-24 mr-7 md:mr-0`}
+>    
+    <span className='hidden md:flex'>Next</span>
+    <span className="ml-2 text-sm">➜</span>
+</button>
+                   
+                </div>
       </div>
     );
   }
