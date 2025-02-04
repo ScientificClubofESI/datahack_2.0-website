@@ -8,9 +8,8 @@ import Mentors from "@/components/mentors";
 import Navbar from "@/components/navbar";
 import Partners from "@/components/partners";
 import RegistrationForm from "@/components/registrationForm";
-import InputFrame from "@/components/registrationForm/motivation_1";
-import RegistrationComplete from "@/components/registrationForm/regisrtationComplete";
-import Team from "@/components/registrationForm/team_2";
+import InputFrame from "@/components/registrationForm/motivation/motivation_1";
+import Team from "@/components/registrationForm/motivation/team_2";
 import Sponsors from "@/components/sponsors";
 import Workshops from "@/components/workshops";
 
@@ -19,9 +18,8 @@ export default function Home() {
   return (
   
   <div className=" bg-background-Dark   h-screen  ">
-
+  <BackgroundShapes/>
     <Navbar/>
-    <BackgroundShapes/>
     <HomeSection/>
     <FAQ/>
     <Workshops/>
@@ -31,6 +29,8 @@ export default function Home() {
     <BackgroundShapes/>
     <Sponsors/>
     <Footer/>
+
+
 
 
   </div>

@@ -57,7 +57,7 @@ const validateForm = () => {
 
 
   return (
-    <section className='bg-background-Dark h-screen w-full flex flex-col'>
+    <section className='bg-background-Dark  flex flex-col max-w-5xl mx-auto md:pt-8 md:px-4'>
       {/* Desktop Navigation */}
       <div className='w-full h-[60px] flex flex-row max-sm:hidden'>
         <div className='w-full h-full relative'>
@@ -99,7 +99,7 @@ const validateForm = () => {
           <p className='text-gray-400 text-sm mb-2 pb-1'>List up to 4 skills you consider yourself proficient at.</p>
           <input
             className={`w-full h-[40px] rounded-md border p-4 font-aspekta 
-            max-sm:h-12 max-sm:text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
+            max-sm:h-12 text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='text'
             name='skills'
             value={formData.skills}
@@ -115,7 +115,7 @@ const validateForm = () => {
           <p className='text-gray-400 text-sm mb-2 pb-1'>Don't worry if this is your first hackathon; your motivation is what truly matters.</p>
           <input
             className={`w-full h-[40px] rounded-md border p-4 font-aspekta 
-            max-sm:h-12 max-sm:text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
+            max-sm:h-12 text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='number'
             name='hackathonsAttended'
             value={formData.hackathonsAttended}
@@ -131,7 +131,7 @@ const validateForm = () => {
           <p className='text-gray-400 text-sm mb-2 pb-1'>How was your hackathon experience? Did you find it meaningful?</p>
           <textarea
             className='w-full h-[120px] rounded-md border p-4 font-aspekta border-gray-100
-            max-sm:text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors'
+            text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors'
             name='experience'
             value={formData.experience}
             onChange={handleChange}

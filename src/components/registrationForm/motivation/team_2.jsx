@@ -15,16 +15,8 @@ export default function Team() {
               NO
             </button>
           </div>
-          
-          <label className="text-white text-xl mb-4">
-            Anything to add? 
-            
-          </label>
-          <textarea
-            id="info2"
-            placeholder="Your answer here..."
-            className="w-full h-28 px-6 py-3 mb-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          ></textarea>
+
+     
         </div>
       </div>
     );

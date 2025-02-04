@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import Education from './Education_Links/Education';
-import Links from './Education_Links/Links';
-import RegistrationBasicDetails from './RegistrationBasicDetails';
+import Education from './education_Links/Education';
+import Links from './education_Links/Links';
+import RegistrationBasicDetails from './registrationBasicDetails';
 import SkillsInterests from './skillinterest';
+import InputFrame from './motivation/motivation_1';
+import Team from './motivation/team_1';
 
 
 const FormController = ({ onClose }) => {
@@ -21,11 +23,14 @@ const FormController = ({ onClose }) => {
           <span className="text-white  font-bold text-2xl">X</span>
         </div>
 
-        {step === 0 && <RegistrationBasicDetails handleNext={handleNext} />}
-        {step === 1 && <SkillsInterests handleBack={handleBack} handleNext={handleNext} />}
+       {/* {step === 0 && <RegistrationBasicDetails handleNext={handleNext} />}*/}
+      
+        {/*{step === 1 && <SkillsInterests handleBack={handleBack} handleNext={handleNext} />}*/}
         {step === 2 && <Education handleBack={handleBack} handleNext={handleNext} />}
         {step === 3 && <Links handleBack={handleBack} handleNext={handleNext} />}
-        
+        {step === 0 && <InputFrame handleBack={handleBack} handleNext={handleNext} />}
+        {step === 1 && <Team handleBack={handleBack} handleNext={handleNext} />}
+       
       </div>
     </div>
   );

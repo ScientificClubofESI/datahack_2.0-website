@@ -115,7 +115,7 @@ const RegistrationBasicDetails = ({ handleNext, handleBack }) => {
           </label>
           <input
             className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.firstName ? 'border-red-500' : 'border-gray-100'}
-            max-sm:h-12 max-sm:text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
+            max-sm:h-12 text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='text'
             name='firstName'
             value={formData.firstName}
@@ -130,7 +130,7 @@ const RegistrationBasicDetails = ({ handleNext, handleBack }) => {
           </label>
           <input
             className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.lastName ? 'border-red-500' : 'border-gray-100'}
-            max-sm:h-12 max-sm:text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
+            max-sm:h-12 text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='text'
             name='lastName'
             value={formData.lastName}
@@ -145,7 +145,7 @@ const RegistrationBasicDetails = ({ handleNext, handleBack }) => {
           </label>
           <input
             className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.email ? 'border-red-500' : 'border-gray-100'}
-            max-sm:h-12 max-sm:text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
+            max-sm:h-12 text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='email'
             name='email'
             value={formData.email}
@@ -160,7 +160,7 @@ const RegistrationBasicDetails = ({ handleNext, handleBack }) => {
           </label>
           <input
             className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.phone ? 'border-red-500' : 'border-gray-100'}
-            max-sm:h-12 max-sm:text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
+            max-sm:h-12 text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='text'
             name='phone'
             value={formData.phone}
