@@ -3,7 +3,7 @@ import { Upload } from "lucide-react";
 
 const degrees = ["cp1/l1", "cp2/l2", "cs1/l3"];
 
-const Links = () => {
+const Links = ({ handleNext, handleBack }) => {
   const validateFile = (file) => {
     const validTypes = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
     if (!file) {
@@ -91,12 +91,7 @@ const Links = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleNext = () => {
-    if (validateForm()) {
-      console.log("Form is valid, proceeding to next step");
-      // Add your logic to proceed to the next step
-    }
-  };
+
 
   const isFormComplete = () => {
     // Check if all required fields are filled and the CV is uploaded correctly
@@ -110,10 +105,8 @@ const Links = () => {
   };
 
 return (
-    <div className="bg-white min-h-screen text-white">
-        <div className="bg-black h-10 w-10 justify-center flex items-center absolute mt-2 md:mt-8 right-3 md:right-32 cursor-pointer p-4">
-            <span className="text-white text-xl w-9">X</span>
-        </div>
+    <div className=" bg-background-Dark min-h-screen text-white">
+      
         <form className="max-w-5xl mx-auto md:pt-8 md:px-4">
             <div className="absolute w-1/2 md:w-5/12 h-1 bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] mt-0 z-10"></div>
             <div className="absolute z-10 mt-3 flex gap-14 mb-12 flex-center ml-8">
@@ -220,16 +213,21 @@ return (
                 </div>
             </div>
 
-            <div className="flex justify-between pt-12 md:pt-0 md:mt-5 bg-black md:bg-white">
+            <div className="flex justify-between pt-12 md:pt-0 md:mt-5 bg-background-Dark">
                 <button
                     type="button"
+                    onClick={handleBack}
                     className="bg-purple-700 text-white px-6 py-2 rounded flex items-center ml-7 md:ml-0 w-16 h-7"
                 >
                     <span className="mr-2 text-xl rotate-[180deg] mt-2">➜</span>
                 </button>
                 <button
                     type="button"
-                    onClick={handleNext}
+                    onClick={() => {
+                      if (validateForm()) {
+                        handleNext();
+                      }
+                    }}
                     disabled={!isFormComplete()}
                     className={`bg-purple-700 text-white flex px-6 py-2 rounded items-center justify-center h-7 w-16 md:w-44 ${
                         !isFormComplete() ? "opacity-50 cursor-not-allowed" : ""

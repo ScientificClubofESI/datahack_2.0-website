@@ -12,7 +12,7 @@ const degrees = [
     'cs1/l3',
 ];
 
-const Education = () => {
+const Education = ({ handleNext, handleBack }) => {
     const [formData, setFormData] = useState({
         university: '',
         major: '',
@@ -65,22 +65,16 @@ const Education = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleNext = () => {
-        if (validateForm()) {
-            console.log('Form is valid, proceeding to next step');
-            // Ajoutez ici la logique pour passer à l'étape suivante
-        }
-    };
+ 
 
     const isFormComplete = () => {
         return formData.university !== '' && formData.major !== '' && formData.degree !== '' && formData.graduationYear !== '';
     };
 
     return ( 
-        <div className="bg-white min-h-screen text-white">
-             <div className='bg-black h-10 w-10  justify-center flex items-center  absolute mt-2 md:mt-8 right-3 md:right-32  cursor-pointer p-4'> 
-                <span className='text-white text-xl w-9   '>X</span>
-             </div>
+        <div className=" bg-background-Dark  text-white">
+            
+            
             <form className="max-w-5xl mx-auto md:pt-8 md:px-4">
                
                 <div className=' absolute w-1/2 md:w-1/3 h-1 bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] mt-0 z-10'></div>
@@ -172,21 +166,28 @@ const Education = () => {
                     </div>
                 </div>
 
-                <div className="flex justify-between pt-12 md:pt-0 md:mt-5 bg-black md:bg-white ">
+                <div className="flex justify-between pt-12 md:pt-0 md:mt-5 bg-black  ">
                     <button 
                         type="button" 
-                        className="bg-purple-700 text-white px-6 py-2 rounded flex items-center ml-7 md:ml-0  w-16 h-7"
+                        className="bg-purple-700 text-white px-6 py-2 rounded flex items-center justify-center ml-7 md:ml-0  w-16 h-7"
                     >
-                        <span className="mr-2 text-xl rotate-[180deg] mt-2">➜</span> 
+                        <span className="mr-2 text-sm rotate-[180deg] mt-2 flex  ">➜</span> 
                     </button>
-                    <button 
-                        type="button"
-                        onClick={handleNext}
-                        disabled={!isFormComplete()}
-                        className={ `  bg-purple-700 text-white flex  px-6 py-2 rounded  items-center justify-center h-7 w-16 md:w-44 ${!isFormComplete() ? 'opacity-50 cursor-not-allowed' : ''} mb-24 mr-7 md:mr-0 `}
-                    >    <span className='hidden md:flex' >Next</span>
-                         <span className="ml-2 text-xl   ">➜</span>
-                    </button>
+
+
+<button 
+    type="button"
+    onClick={() => {
+        if (validateForm()) {
+          handleNext();
+        }
+      }} 
+    disabled={!isFormComplete()}
+    className={`bg-purple-700 text-white flex px-6 py-2 rounded items-center justify-center h-7 w-16 md:w-44 ${!isFormComplete() ? 'opacity-50 cursor-not-allowed' : ''} mb-24 mr-7 md:mr-0`}
+>    
+    <span className='hidden md:flex'>Next</span>
+    <span className="ml-2 text-sm">➜</span>
+</button>
                    
                 </div>
             </form>
