@@ -120,7 +120,7 @@ const MentorsSection = () => {
               />
           </div>
 
-          <div className="flex flex-col gap-3 w-full max-w-[200px] 2lg:max-w-full z-10">
+          <div className="flex flex-col gap-3 w-full max-w-[200px] 2lg:max-w-full">
             {/* Progress Bar */}
             <div className="w-full h-1 bg-neutral-800 rounded-full">
               <div className="h-full bg-Primary-500 rounded-2xl" style={progressBarStyle} />
@@ -163,7 +163,7 @@ const MentorsSection = () => {
         </div>
 
         {/* Desktop Thumbnails Column */}
-        <div className="flex flex-row -order-first 2lg:-order-none justify-center 2lg:flex-col gap-4 2lg:mr-20 z-10">
+        <div className="flex flex-row -order-first 2lg:-order-none justify-center 2lg:flex-col gap-4 2lg:mr-20 ">
           {mentors.map((mentor, index) => (
             <button
               key={mentor.id}

@@ -67,7 +67,7 @@ const Agenda = () => {
 
           // Dynamic positioning and scaling
           const translateX = (position - 1) * 75; // Moves relative to center
-          const scale = position === 1 ? 'scale-110 z-10' : 'scale-90'; // Highlight the center card
+          const scale = position === 1 ? 'scale-110 ' : 'scale-90'; // Highlight the center card
 
           return (
             <div

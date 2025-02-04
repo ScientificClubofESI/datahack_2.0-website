@@ -30,8 +30,7 @@ export default function Home() {
     <Partners/>
     <Sponsors/>
 
-    <RegistrationComplete/> 
-    <RegistrationForm/>
+
 
     <Workshops/>
     <Agenda/>

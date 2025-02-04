@@ -14,8 +14,10 @@ const navLinks = [
 
 const RegistrationModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
+  
   return <FormController onClose={onClose} />;
 };
+
 
 export default function NavBar() {
   const [activeLink, setActiveLink] = useState("home");
