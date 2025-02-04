@@ -140,7 +140,7 @@ return (
                             className="w-44  flex items-center justify-center text-black bg-white hover:bg-gray-100 border border-gray-300 p-3 rounded cursor-pointer transition-colors"
                         > 
                             <Upload className="w-5 h-5 mr-2 text-[#075985]" />
-                            <span className="text-[#075985]">
+                            <span className="truncate overflow-hidden  text-ellipsistext-[#075985]">
                                 {formData.cv ? formData.cv.name : "Add a file"}
                             </span>
                         </label>
