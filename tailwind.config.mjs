@@ -8,10 +8,28 @@ export default {
   ],
   theme: {
     extend: {
+
+      screens: {
+        '2lg': '1089px',
+        '3xl': '1716px',
+        '9xl': '1750px',
+      },
+      boxShadow: {
+        'custom-glow': '0px 0px 40px rgba(199, 131, 251, 0.2)',
+      },
+      backgroundImage: {
+        'image-mentors': "url('/images/mentors/test-shapes.png')",
+      },
+      fontFamily: {
+        hubotSans: ["Hubot Sans", "sans-serif"],
+        aspekta: ["Aspekta", "sans-serif"],
+
+      },
       colors: {
+        
         background: {
           Light: "#F0F7FF",
-          Dark: "#14161F",
+          Dark: "#020203",
         },
         Monotone: {
           White: "#FFFFFF",
