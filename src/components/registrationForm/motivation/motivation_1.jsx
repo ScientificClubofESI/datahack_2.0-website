@@ -1,13 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-export default function InputFrame({ handleNext, handleBack }) {
+export default function InputFrame({ handleNext, handleBack,handleChange, formData }) {
   const [showErrors, setShowErrors] = useState(false);
 
-  const [formData, setFormData] = useState({
-    heard: "",
-    motivation: "",
-  });
+
 
   const [errors, setErrors] = useState({
     heard: false,
@@ -32,16 +29,6 @@ export default function InputFrame({ handleNext, handleBack }) {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-
-    if (value.trim() === '') {
-      setErrors({ ...errors, [name]: true });
-    } else {
-      setErrors({ ...errors, [name]: false });
-    }
-  };
 
   const isFormComplete = () => {
     // Check if all required fields are filled

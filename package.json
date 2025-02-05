@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "axios": "^1.7.9",
     "iconsax-react": "^0.0.8",
     "lucide-react": "^0.469.0",
     "next": "15.1.3",

@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-const RegistrationBasicDetails = ({ handleNext, handleBack }) => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: ''
-  });
+const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formData }) => {
+
+
 
   const [errors, setErrors] = useState({
     firstName: false,
@@ -57,17 +53,7 @@ const RegistrationBasicDetails = ({ handleNext, handleBack }) => {
     setShowErrors(true);
     return Object.keys(newErrors).length === 0;
   };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-
-    // Validate all required fields including phone
-    if (value.trim() === '') {
-      setErrors({ ...errors, [name]: true });
-    } else {
-      setErrors({ ...errors, [name]: false });
-    }
-  };
+ 
 
   const handleValidation = () => {
     const newErrors = {

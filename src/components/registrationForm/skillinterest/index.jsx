@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const SkillsInterests = ({ handleNext, handleBack }) => {
-  const [formData, setFormData] = useState({
-    skills: '',
-    hackathonsAttended: '',
-    experience: ''
-  });
+const SkillsInterests = ({ handleNext, handleBack,handleChange , formData}) => {
+
   const [showErrors, setShowErrors] = useState(false);
 
   const [errors, setErrors] = useState({
@@ -21,16 +17,6 @@ const SkillsInterests = ({ handleNext, handleBack }) => {
     setIsFormValid(isValid);
   }, [formData]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    
-    if (value.trim() === '') {
-      setErrors({ ...errors, [name]: true });
-    } else {
-      setErrors({ ...errors, [name]: false });
-    }
-  };
   const isFormComplete = () => {
     return formData.skills.trim() !== '' &&
     formData.hackathonsAttended.trim() !== '';

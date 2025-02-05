@@ -3,7 +3,7 @@ import { Upload } from "lucide-react";
 
 const degrees = ["cp1/l1", "cp2/l2", "cs1/l3"];
 
-const Links = ({ handleNext, handleBack }) => {
+const Links = ({ handleNext, handleBack,handleChange ,formData }) => {
   const validateFile = (file) => {
     const validTypes = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
     if (!file) {
@@ -18,51 +18,41 @@ const Links = ({ handleNext, handleBack }) => {
     return "";
   };
 
-  const [formData, setFormData] = useState({
-    CV: "",
-    Github: "",
-    Kaggle: "",
-    LinkedIn: "",
-    cv: null,
-  });
+
 
   const [errors, setErrors] = useState({});
   const [showErrors, setShowErrors] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-    setErrors((prevErrors) => ({
-      ...prevErrors,
-      [name]: "",
-    }));
-  };
+ 
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
+    
     if (file) {
-      const fileError = validateFile(file);
-      if (fileError) {
+        const fileError = validateFile(file);
+
+        if (fileError) {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                cv: fileError,
+            }));
+            setShowErrors(true);
+            return;
+        }
+
+        // ✅ Correct way to update formData
+        handleChange({ target: { name: "cv", value: file } });
+
         setErrors((prevErrors) => ({
-          ...prevErrors,
-          cv: fileError,
+            ...prevErrors,
+            cv: "",
         }));
-        setShowErrors(true);
-        return;
-      }
-      setFormData((prevState) => ({
-        ...prevState,
-        cv: file,
-      }));
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        cv: "",
-      }));
     }
-  };
+};
+
+
+
+
 
   const validateForm = () => {
     let newErrors = {};

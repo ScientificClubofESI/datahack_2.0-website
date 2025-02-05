@@ -12,28 +12,13 @@ const degrees = [
     'cs1/l3',
 ];
 
-const Education = ({ handleNext, handleBack }) => {
-    const [formData, setFormData] = useState({
-        university: '',
-        major: '',
-        degree: '',
-        graduationYear: ''
-    });
+const Education = ({ handleNext, handleBack,handleChange,formData }) => {
+
 
     const [errors, setErrors] = useState({});
     const [showErrors, setShowErrors] = useState(false);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-        setErrors(prevErrors => ({
-            ...prevErrors,
-            [name]: ''
-        }));
-    };
+  
 
     const validateForm = () => {
         let newErrors = {};

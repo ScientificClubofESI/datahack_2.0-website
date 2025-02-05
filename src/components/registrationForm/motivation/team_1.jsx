@@ -1,17 +1,14 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-export default function Team({ handleNext, handleBack }) {
+export default function Team({ handleNext, handleBack,handleChange , formData}) {
   const [hasTeam, setHasTeam] = useState(true); 
   const [joinTeam, setjoinTeam] = useState(true); 
   const [chaine, setChaine] = useState('code'); 
   const [errors, setErrors] = useState({});
   const [showErrors, setShowErrors] = useState(false);
 
-  const [formData, setFormData] = useState({
-    team: "",
-    join: "",
-  });
+
 
  
   const validateForm = () => {
