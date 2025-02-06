@@ -8,7 +8,7 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
     firstName: false,
     lastName: false,
     email: false,
-    phone: false
+    phoneNumber: false
   });
   const [showErrors, setShowErrors] = useState(false);
   
@@ -18,13 +18,13 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
     return formData.firstName.trim() !== '' &&
     formData.lastName.trim() !== '' &&
     formData.email.trim() !== '' &&
-    formData.phone.trim() !== '';
+    formData.phoneNumber !== '';
 };
   useEffect(() => {
     const isValid = formData.firstName.trim() !== '' &&
                    formData.lastName.trim() !== '' &&
                    formData.email.trim() !== '' &&
-                   formData.phone.trim() !== '';  // Added phone validation
+                   formData.phoneNumber!== '';  // Added phoneNumber validation
     setIsFormValid(isValid);
   }, [formData]);
   const validateForm = () => {
@@ -46,8 +46,8 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
     }
 
     // Validate graduation year
-    if (!formData.phone) {
-      newErrors.phone = "Please enter your phone number";
+    if (!formData.phoneNumber) {
+      newErrors.phoneNumber = "Please enter your phoneNumber number";
     } 
     setErrors(newErrors);
     setShowErrors(true);
@@ -60,7 +60,7 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
       firstName: formData.firstName.trim() === '',
       lastName: formData.lastName.trim() === '',
       email: formData.email.trim() === '',
-      phone: formData.phone.trim() === ''  // Fixed phone validation
+      phoneNumber: formData.phoneNumber=== ''  // Fixed phoneNumber validation
     };
     setErrors(newErrors);
   };
@@ -142,14 +142,14 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
 
         <div className='w-full h-[72px] gap-2 flex flex-col max-sm:gap-1'>
           <label className='h-[24px] text-white font-aspekta max-sm:text-sm max-sm:mb-1'>
-            Phone Number <span className='text-red-500'>*</span>
+            phoneNumber Number <span className='text-red-500'>*</span>
           </label>
           <input
-            className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.phone ? 'border-red-500' : 'border-gray-100'}
+            className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.phoneNumber ? 'border-red-500' : 'border-gray-100'}
             max-sm:h-12 text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='text'
-            name='phone'
-            value={formData.phone}
+            name='phoneNumber'
+            value={formData.phoneNumber}
             onChange={handleChange}
             placeholder='+213 xxxxxxx'
           />

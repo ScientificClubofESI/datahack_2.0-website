@@ -15,19 +15,30 @@ const FormController = ({ onClose }) => {
     lastName: " ",
     email: "yasmine@gmail.com",
     phoneNumber: " ",
+
     skills: " ",
     hackathonsAttended:0,
     hackathonsExperience: " ",
+
     university: " ",
     major: " ",
     degree: " ",
     graduationYear: 2024,
+
     hearAboutUs: " ",
     motivation: " ",
+
+    linkedIn: " ",
+    github: " ",
+    cv: " ",
+    kaggle: " ",
+
     hasTeam: true,
     createTeam:true,
     teamName:"yasou",
-    teamCode: " " 
+    teamCode: " " ,
+
+    comment:" ",
   });
 
   const handleNext = () => setStep(step + 1);
@@ -42,17 +53,7 @@ const FormController = ({ onClose }) => {
   };
   
 
-  const handleSubmit = async () => {
-    try {
-      const response = await axios.post('http://localhost:3001/api/users', formData);
-      console.log('Success:', response.data);
-      alert('Registration successful!');
-      onClose();
-    } catch (error) {
-      console.error('Error:', error.response?.data || error.message);
-      alert('Error submitting form');
-    }
-  };
+
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -61,21 +62,14 @@ const FormController = ({ onClose }) => {
           <span className="text-white font-bold text-2xl">X</span>
         </div>
 
-        {step === 0 &&(<button onClick={handleSubmit} className="bg-blue-500 text-white px-4 py-2 rounded mt-4">
-            Submit
-          </button>
-        )}
+        {step === 0 && <RegistrationBasicDetails handleNext={handleNext} handleChange={handleChange} formData={formData} />}
         {step === 1 && <SkillsInterests handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
-       {step === 2 && <Education handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
+        {step === 2 && <Education handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
         {step === 3 && <Links handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
         {step === 4 && <InputFrame handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
         {step === 5 && <Team handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
 ¨
-        {step === 5 && (
-          <button onClick={handleSubmit} className="bg-blue-500 text-white px-4 py-2 rounded mt-4">
-            Submit
-          </button>
-        )}
+ 
       </div>
     </div>
   );

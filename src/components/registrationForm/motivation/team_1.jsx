@@ -1,10 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 
 export default function Team({ handleNext, handleBack,handleChange , formData}) {
   const [hasTeam, setHasTeam] = useState(true); 
   const [joinTeam, setjoinTeam] = useState(true); 
-  const [chaine, setChaine] = useState('code'); 
+  const [chaine, setChaine] = useState('teamCode'); 
   const [errors, setErrors] = useState({});
   const [showErrors, setShowErrors] = useState(false);
 
@@ -19,6 +21,17 @@ export default function Team({ handleNext, handleBack,handleChange , formData}) 
     return Object.keys(newErrors).length === 0;
 };
 
+const handleSubmit = async () => {
+  try {
+    const response = await axios.post('http://localhost:3001/api/users', formData);
+    console.log('Success:', response.data);
+    alert('Registration successful!');
+    onClose();
+  } catch (error) {
+    console.error('Error:', error.response?.data || error.message);
+    alert('Error submitting form'+error.response?.data || error.message);
+  }
+};
 
 
 const isFormComplete = () => {
@@ -26,19 +39,23 @@ const isFormComplete = () => {
 };
   const handleYes = () => {
     setHasTeam(true);
+    formData.hasTeam = true;
   };
 
   const handleNo = () => {
     setHasTeam(false);
+    formData.hasTeam = false;
   };
   const handleJoin = () => {
     setjoinTeam(true);
-    setChaine('code');
+    formData.createTeam = false;
+    setChaine('teamCode');
   };
 
   const handleNoJoin = () => {
     setjoinTeam(false);
-    setChaine('name');
+    setChaine('teamName');
+    formData.createTeam = true;
   };
 
 
@@ -90,21 +107,23 @@ const isFormComplete = () => {
             </button>
             <button 
             onClick={handleNoJoin}
+          
             className="px-4 py-2 bg-blue-500 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-700 hover:bg-blue-400">
               Create a Team
             </button>
           </div>
           <div>
                    <label className="text-white text-xl">
-            Team {chaine}
+            {chaine}
             <span className="text-red-500">*</span>
           </label>
           <p className="text-sm text-gray-400 py-2">
-            Please enter the team {chaine} that was sent to the person who created the team.
+            Please enter the  {chaine} that was sent to the person who created the team.
           </p>
           <input
             type="text"
             id="info1"
+            value={formData.chaine}
             placeholder="Your answer here..."
             className="w-full h-12  px-4 py-3 mb-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
@@ -113,6 +132,7 @@ const isFormComplete = () => {
           </label>
           <textarea
             id="info2"
+            value={formData.comment}
             placeholder="Your answer here..."
             className="w-full h-28 px-4 py-3 mb-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           ></textarea>
@@ -135,15 +155,15 @@ const isFormComplete = () => {
     type="button"
     onClick={() => {
         if (validateForm()) {
-          handleNext();
+          handleSubmit();
         }
       }} 
     disabled={!isFormComplete()}
     className={`bg-purple-700 text-white flex px-6 py-2 rounded items-center justify-center h-7 w-16 md:w-44 ${!isFormComplete() ? 'opacity-50 cursor-not-allowed' : ''} mb-24 mr-7 md:mr-0`}
 >    
-    <span className='hidden md:flex'>Next</span>
-    <span className="ml-2 text-sm">➜</span>
-</button>
+    <span className='hidden md:flex'>Submit</span>
+
+    </button>
                    
                 </div>
       </div>

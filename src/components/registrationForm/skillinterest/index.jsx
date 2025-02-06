@@ -13,13 +13,13 @@ const SkillsInterests = ({ handleNext, handleBack,handleChange , formData}) => {
 
   useEffect(() => {
     const isValid = formData.skills.trim() !== '' && 
-                   formData.hackathonsAttended.trim() !== '';
+                   formData.hackathonsAttended !== '';
     setIsFormValid(isValid);
   }, [formData]);
 
   const isFormComplete = () => {
     return formData.skills.trim() !== '' &&
-    formData.hackathonsAttended.trim() !== '';
+    formData.hackathonsAttended !== '';
 };
 const validateForm = () => {
   let newErrors = {};

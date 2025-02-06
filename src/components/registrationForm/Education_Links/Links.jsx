@@ -4,54 +4,12 @@ import { Upload } from "lucide-react";
 const degrees = ["cp1/l1", "cp2/l2", "cs1/l3"];
 
 const Links = ({ handleNext, handleBack,handleChange ,formData }) => {
-  const validateFile = (file) => {
-    const validTypes = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
-    if (!file) {
-      return "Please upload your CV";
-    }
-    if (!validTypes.includes(file.type)) {
-      return "File type must be PDF or DOC/DOCX";
-    }
-    if (file.size > 10 * 1024 * 1024) {
-      return "File size must be less than 10MB";
-    }
-    return "";
-  };
 
+    
 
 
   const [errors, setErrors] = useState({});
   const [showErrors, setShowErrors] = useState(false);
-
- 
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    
-    if (file) {
-        const fileError = validateFile(file);
-
-        if (fileError) {
-            setErrors((prevErrors) => ({
-                ...prevErrors,
-                cv: fileError,
-            }));
-            setShowErrors(true);
-            return;
-        }
-
-        // ✅ Correct way to update formData
-        handleChange({ target: { name: "cv", value: file } });
-
-        setErrors((prevErrors) => ({
-            ...prevErrors,
-            cv: "",
-        }));
-    }
-};
-
-
-
 
 
   const validateForm = () => {
@@ -89,8 +47,8 @@ const Links = ({ handleNext, handleBack,handleChange ,formData }) => {
       formData.Github !== "" &&
       formData.Kaggle !== "" &&
       formData.LinkedIn !== "" &&
-      formData.cv !== null && // Ensure the CV is uploaded
-      errors.cv === "" // Ensure there are no file errors
+      formData.cv !== ""// Ensure the CV is uploaded
+    
     );
   };
 
@@ -108,33 +66,23 @@ return (
                 </span>
             </div>
             <div className="bg-black min-w-full px-5 md:px-28 pb-12 md:pb-20 pt-24">
-                <div className="space-y-6">
-                <label className="block text-md ">
+      
+            <div className="space-y-2">
+                    <label className="block text-md mt-5">
                     CV <span className="text-red-500">*</span>
                     </label>
-                    <div className="text-gray-400 text-sm mb-2">
-                        Upload 1 compatible file: PDF or document. 10 MB max.
-                    </div>
+                    <input
+    type="text"
+    name="cv"
+    placeholder="Please upload your CV"
+    value={formData.cv }
+    onChange={handleChange}
+    className={`w-full p-2 rounded bg-white border ${
+        showErrors && errors.cv ? "border-red-500" : "border-gray-700"
+    } text-black`}
+/>
 
-                    <div className="relative">
-                        <input
-                            type="file"
-                            accept=".pdf,.doc,.docx"
-                            name="cv"
-                            onChange={handleFileChange}
-                            className="hidden"
-                            id="cv-upload"
-                        />
-                        <label
-                            htmlFor="cv-upload"
-                            className="w-44  flex items-center justify-center text-black bg-white hover:bg-gray-100 border border-gray-300 p-3 rounded cursor-pointer transition-colors"
-                        > 
-                            <Upload className="w-5 h-5 mr-2 text-[#075985]" />
-                            <span className="truncate overflow-hidden  text-ellipsistext-[#075985]">
-                                {formData.cv ? formData.cv.name : "Add a file"}
-                            </span>
-                        </label>
-                    </div>
+
                     {showErrors && errors.cv && (
                         <span className="text-red-500 text-xs">{errors.cv}</span>
                     )}
