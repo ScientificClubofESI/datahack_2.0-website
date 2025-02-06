@@ -1,14 +1,16 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import RegistrationComplete from '../regisrtationComplete';
 
 
-export default function Team({ handleNext, handleBack,handleChange , formData}) {
+export default function Team({ handleNext, handleBack,handleChange , formData , onClose}) {
   const [hasTeam, setHasTeam] = useState(true); 
   const [joinTeam, setjoinTeam] = useState(true); 
   const [chaine, setChaine] = useState('teamCode'); 
   const [errors, setErrors] = useState({});
   const [showErrors, setShowErrors] = useState(false);
+  const [completed , setCompleted] = useState(false);
 
 
 
@@ -24,13 +26,13 @@ export default function Team({ handleNext, handleBack,handleChange , formData}) 
 const handleSubmit = async () => {
   try {
     const response = await axios.post('http://localhost:3001/api/users', formData);
-    console.log('Success:', response.data);
-    alert('Registration successful!');
+    setCompleted(true);
     onClose();
+   
   } catch (error) {
     console.log(formData);
     console.error('Error:', error.response?.data || error.message);
-    alert('Error submitting form'+error.response?.data || error.message);
+   // alert('Error submitting form'+error.response?.data || error.message);
   }
 };
 
@@ -60,7 +62,16 @@ const isFormComplete = () => {
   };
 
 
-    return (
+    return (completed === true) ? 
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+            <div className="absolute right-0 cursor-pointer p-4 z-50" onClick={onClose}> 
+              <span className="text-white font-bold text-2xl">X</span>
+            </div>
+             <RegistrationComplete hasteam={true} teamName={formData.teamName} teamCode={formData.teamCode} />
+             </div>
+             </div>
+    : (
       <div className=" bg-black  top-0  p-8">
         <div className="flex flex-col items-start p-6 w-full max-w-3xl mx-auto">
           <div className="flex md:flex-row flex-col  justify-center space-x-4 mb-8">
@@ -172,5 +183,6 @@ const isFormComplete = () => {
                 </div>
       </div>
     );
+
   }
   

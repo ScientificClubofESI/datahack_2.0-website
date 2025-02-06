@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const RegistrationComplete = () => {
+const RegistrationComplete = ({hasTeam, teamName,teamCode}) => {
   const [visible, setvisible] = useState(true); // État pour contrôler la visibilité du popup
 
   const handleClose = () => {
@@ -34,9 +34,17 @@ const RegistrationComplete = () => {
           <div className="text-[16px] font-normal text-neutral-300 px-8 pt-4 mb-16 sm:mb-2 text-center">
             Congratulations, You have successfully completed your registration!
           </div>
-          <div className="text-[16px] text-left font-normal px-8  text-neutral-400 sm:text-neutral-300 pt-2 ">
+          <div className="text-[16px] text-left font-normal px-8  text-neutral-400 sm:text-neutral-300 pb-4 ">
             You will receive an email confirming whether your application has been accepted or declined.
           </div>
+         
+            <div className='font-normal text-[16px] text-left  px-8  text-neutral-400 sm:text-neutral-300   
+            border  border-s   rounded-md p-3 mt-4'> 
+            
+             Your team name : <b className=' text-Primary-600'>{teamName}</b > , your team code : <b className=' text-Primary-600'>{teamCode}</b>
+             
+            </div>
+        
         </div>
       </div>    
       )}

@@ -6,6 +6,7 @@ import HomeSection from "@/components/home";
 import Mentors from "@/components/mentors";
 import Navbar from "@/components/navbar";
 import Partners from "@/components/partners";
+import RegistrationComplete from "@/components/registrationForm/regisrtationComplete";
 import Sponsors from "@/components/sponsors";
 import Workshops from "@/components/workshops";
 
@@ -25,11 +26,11 @@ export default function Home() {
     <BackgroundShapes/>
     <Sponsors/>
     <Footer/>
-
-
-
-
-  </div>
+    
+    
+    
+    
+      </div>
   );
 }
 
