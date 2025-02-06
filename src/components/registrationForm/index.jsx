@@ -11,34 +11,34 @@ const FormController = ({ onClose }) => {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
    
-    firstName: " ",
-    lastName: " ",
-    email: "yasmine@gmail.com",
-    phoneNumber: " ",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
 
-    skills: " ",
+    skills: "",
     hackathonsAttended:0,
-    hackathonsExperience: " ",
+    hackathonsExperience: "",
 
-    university: " ",
-    major: " ",
-    degree: " ",
+    university: "",
+    major: "",
+    degree: "",
     graduationYear: 2024,
 
-    hearAboutUs: " ",
-    motivation: " ",
+    hearAboutUs: "",
+    motivation: "",
 
-    linkedIn: " ",
-    github: " ",
-    cv: " ",
-    kaggle: " ",
+    linkedIn: "",
+    github: "",
+    cv: "",
+    kaggle: "",
 
-    hasTeam: true,
-    createTeam:true,
-    teamName:"yasou",
-    teamCode: " " ,
+    hasTeam: false,
+    createTeam: true,
+    teamName:"",
+    teamCode: "" ,
 
-    comment:" ",
+    comment:"",
   });
 
   const handleNext = () => setStep(step + 1);

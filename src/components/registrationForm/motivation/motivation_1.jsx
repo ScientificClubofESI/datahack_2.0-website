@@ -7,7 +7,7 @@ export default function InputFrame({ handleNext, handleBack,handleChange, formDa
 
 
   const [errors, setErrors] = useState({
-    heard: false,
+    hearAboutUs:false,
     motivation: false,
   });
 
@@ -15,8 +15,8 @@ export default function InputFrame({ handleNext, handleBack,handleChange, formDa
     let newErrors = {};
 
     // Validate heard
-    if (!formData.heard) {
-      newErrors.heard = "Please enter your response";
+    if (!formData.hearAboutUs) {
+      newErrors.hearAboutUs = "Please enter your response";
     }
 
     // Validate motivation
@@ -33,7 +33,7 @@ export default function InputFrame({ handleNext, handleBack,handleChange, formDa
   const isFormComplete = () => {
     // Check if all required fields are filled
     return (
-      formData.heard !== "" &&
+      formData.hearAboutUs !== "" &&
       formData.motivation !== ""
     );
   };
@@ -48,9 +48,9 @@ export default function InputFrame({ handleNext, handleBack,handleChange, formDa
         <input
           type="text"
           id="info1"
-          name="heard"
+          name="hearAboutUs"
           onChange={handleChange}
-          value={formData.heard}
+          value={formData.hearAboutUs}
           placeholder="Your answer here..."
           className=" text-black w-full h-12 px-6 py-3 mb-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />

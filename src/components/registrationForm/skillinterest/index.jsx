@@ -6,7 +6,8 @@ const SkillsInterests = ({ handleNext, handleBack,handleChange , formData}) => {
 
   const [errors, setErrors] = useState({
     skills: false,
-    hackathonsAttended: false
+    hackathonsAttended: false,
+    hackathonsExperience:false
   });
 
   const [isFormValid, setIsFormValid] = useState(false);
@@ -118,8 +119,8 @@ const validateForm = () => {
           <textarea
             className='w-full h-[120px] rounded-md border p-4 font-aspekta border-gray-100
             text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors'
-            name='experience'
-            value={formData.experience}
+            name='hackathonsExperience'
+            value={formData.hackathonsExperience}
             onChange={handleChange}
             placeholder='Let us know about your journey'
           />
