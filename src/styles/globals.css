@@ -2,4 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+.gradient-border {
+    border: 2px solid;
+    border-image: linear-gradient(90deg, rgb(111, 6, 193) 0%, rgb(78, 164, 249) 50%, rgb(54, 217, 255) 100%) 1;
+}
+.gradient-text {
+    background: linear-gradient(90deg, rgb(111, 6, 193) 0%, rgb(78, 164, 249) 50%, rgb(54, 217, 255) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+  
+  body {
+    background-color: #020203;
+
+  }
 
