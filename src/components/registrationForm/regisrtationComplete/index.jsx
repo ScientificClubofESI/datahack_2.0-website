@@ -38,12 +38,12 @@ const RegistrationComplete = ({hasTeam, teamName,teamCode}) => {
             You will receive an email confirming whether your application has been accepted or declined.
           </div>
          
-            <div className='font-normal text-[16px] text-left  px-8  text-neutral-400 sm:text-neutral-300   
+            {hasTeam===true && (<div className='font-normal text-[16px] text-left  px-8  text-neutral-400 sm:text-neutral-300   
             border  border-s   rounded-md p-3 mt-4'> 
             
              Your team name : <b className=' text-Primary-600'>{teamName}</b > , your team code : <b className=' text-Primary-600'>{teamCode}</b>
              
-            </div>
+            </div>)}
         
         </div>
       </div>    
