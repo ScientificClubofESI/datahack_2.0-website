@@ -28,6 +28,7 @@ const handleSubmit = async () => {
     alert('Registration successful!');
     onClose();
   } catch (error) {
+    console.log(formData);
     console.error('Error:', error.response?.data || error.message);
     alert('Error submitting form'+error.response?.data || error.message);
   }
@@ -121,12 +122,15 @@ const isFormComplete = () => {
             Please enter the  {chaine} that was sent to the person who created the team.
           </p>
           <input
-            type="text"
-            id="info1"
-            value={formData.chaine}
-            placeholder="Your answer here..."
-            className="w-full h-12  px-4 py-3 mb-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          />
+  type="text"
+  name="teamName"  // Add name attribute so handleChange works
+  value={formData.teamName }  
+  onChange={handleChange}  // Now updates properly
+  placeholder="Your answer here..."
+  className="w-full h-12 px-4 py-3 mb-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+  />
+
+
           <label className="text-white text-xl mb-4 ">
             Anything to add? 
           </label>
@@ -134,7 +138,7 @@ const isFormComplete = () => {
             id="info2"
             value={formData.comment}
             placeholder="Your answer here..."
-            className="w-full h-28 px-4 py-3 mb-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full h-28 px-4 py-3 mb-8 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           ></textarea>
             </div>
          </div>

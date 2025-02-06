@@ -18,7 +18,7 @@ const FormController = ({ onClose }) => {
 
     skills: "",
     hackathonsAttended:0,
-    hackathonsExperience: "",
+    hackathonsExperience: " ",
 
     university: "",
     major: "",
