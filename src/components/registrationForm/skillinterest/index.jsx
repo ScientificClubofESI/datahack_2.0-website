@@ -25,14 +25,20 @@ const SkillsInterests = ({ handleNext, handleBack,handleChange , formData}) => {
 const validateForm = () => {
   let newErrors = {};
 
-  // Validate firstName
+  // Validate skills
   if (!formData.skills) {
     newErrors.skills = "Please enter your first Name";
+  }else if (!/^[a-zA-Z]+$/.test(formData.skills)) {
+    newErrors.skills = "First name should only contain letters";
   }
 
-  // Validate major
-  if (!formData.hackathonsAttended) {
-    newErrors.hackathonsAttended = "Please enter your Last name";
+ 
+  if (formData.hackathonsAttended === undefined || formData.hackathonsAttended === null) {
+    newErrors.hackathonsAttended = "Please enter the number of hackathons attended";
+  } else if (isNaN(formData.hackathonsAttended)) {
+    newErrors.hackathonsAttended = "Number of hackathons attended must be a number";
+  } else if (formData.hackathonsAttended < 0 || formData.hackathonsAttended > 100) {
+    newErrors.hackathonsAttended = "Number of hackathons attended must be between 0 and 100";
   }
 
  
@@ -86,13 +92,16 @@ const validateForm = () => {
           <p className='text-gray-400 text-sm mb-2 pb-1'>List up to 4 skills you consider yourself proficient at.</p>
           <input
             className={`w-full h-[40px] rounded-md border p-4 font-aspekta 
-            max-sm:h-12 text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
+            max-sm:h-12 text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors ${errors.skills ? 'border-red-500' : 'border-gray-100'}`}
             type='text'
             name='skills'
             value={formData.skills}
             onChange={handleChange}
             placeholder='Enter Your Skills'
           />
+           {showErrors && errors.skills && (
+                                <span className="text-red-500 text-xs">{errors.skills}</span>
+          )}
         </div>
 
         <div className='w-full gap-2 flex flex-col max-sm:gap-1'>
@@ -102,13 +111,18 @@ const validateForm = () => {
           <p className='text-gray-400 text-sm mb-2 pb-1'>Don't worry if this is your first hackathon; your motivation is what truly matters.</p>
           <input
             className={`w-full h-[40px] rounded-md border p-4 font-aspekta 
-            max-sm:h-12 text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
+            max-sm:h-12 text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 
+            max-sm:transition-colors ${errors.hackathonsAttended ? 'border-red-500' : 'border-gray-100'}`}
             type='number'
+            min="0" max="100"
             name='hackathonsAttended'
             value={formData.hackathonsAttended}
             onChange={handleChange}
             placeholder='Enter a number'
           />
+              {showErrors && errors.hackathonsAttended && (
+                                <span className="text-red-500 text-xs">{errors.hackathonsAttended}</span>
+          )}
         </div>
 
         <div className='w-full gap-2 flex flex-col max-sm:gap-1'>

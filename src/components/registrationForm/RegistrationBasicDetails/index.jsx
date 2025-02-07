@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formData }) => {
-
-
-
   const [errors, setErrors] = useState({
     firstName: false,
     lastName: false,
@@ -16,10 +13,11 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
   const [isFormValid, setIsFormValid] = useState(false);
   const isFormComplete = () => {
     return formData.firstName.trim() !== '' &&
-    formData.lastName.trim() !== '' &&
-    formData.email.trim() !== '' &&
-    formData.phoneNumber !== '';
-};
+      formData.lastName.trim() !== '' &&
+      formData.email.trim() !== ''&&
+      formData.phoneNumber.trim() !== '';
+  };
+  
   useEffect(() => {
     const isValid = formData.firstName.trim() !== '' &&
                    formData.lastName.trim() !== '' &&
@@ -27,33 +25,41 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
                    formData.phoneNumber!== '';  // Added phoneNumber validation
     setIsFormValid(isValid);
   }, [formData]);
+
   const validateForm = () => {
     let newErrors = {};
-
-    // Validate firstName
-    if (!formData.firstName) {
-      newErrors.firstName = "Please enter your first Name";
+  
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "Please enter your first name";
+    }else if (!/^[a-zA-Z]+$/.test(formData.firstName)) {
+      newErrors.firstName = "First name should only contain letters";
     }
-
-    // Validate major
-    if (!formData.lastName) {
-      newErrors.lastName = "Please enter your Last name";
+  
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = "Please enter your last name";
     }
-
-    // Validate degree
-    if (!formData.email) {
-      newErrors.email = "Please enter an email";
+    else if (!/^[a-zA-Z]+$/.test(formData.lastName)) {
+      newErrors.lastName = "Last name should only contain letters";
     }
-
-    // Validate graduation year
-    if (!formData.phoneNumber) {
-      newErrors.phoneNumber = "Please enter your phoneNumber number";
-    } 
+  
+    if (!formData.phoneNumber.trim()) {
+      newErrors.phoneNumber = "Please enter your phone number";
+    }else if (!/^\d+$/.test(formData.phoneNumber)) {
+      newErrors.phoneNumber = "Phone number should only contain digits";
+    }
+  
+    if (!formData.email.trim()) {
+      newErrors.email = "Please enter your email";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email (example@gmail.com)";
+    }
+  
     setErrors(newErrors);
     setShowErrors(true);
-    return Object.keys(newErrors).length === 0;
+  
+    return Object.keys(newErrors).length === 0; // Returns false if errors exist
   };
- 
+  
 
   const handleValidation = () => {
     const newErrors = {
@@ -108,6 +114,9 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
             onChange={handleChange}
             placeholder='Your First name'
           />
+              {showErrors && errors.firstName && (
+                                <span className="text-red-500 text-xs">{errors.firstName}</span>
+          )}
         </div>
 
         <div className='w-full h-[72px] gap-2 flex flex-col max-sm:gap-1'>
@@ -123,14 +132,18 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
             onChange={handleChange}
             placeholder='Your Last name'
           />
+              {showErrors && errors.lastName && (
+                                <span className="text-red-500 text-xs">{errors.lastName}</span>
+          )}
+   
         </div>
 
-        <div className='w-full h-[72px] gap-2 flex flex-col max-sm:gap-1'>
+<div className='w-full h-[72px] gap-2 flex flex-col max-sm:gap-1'>
           <label className='h-[24px] text-white font-aspekta max-sm:text-sm max-sm:mb-1'>
             Email <span className='text-red-500'>*</span>
           </label>
           <input
-            className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.email ? 'border-red-500' : 'border-gray-100'}
+            className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${showErrors && errors.email ? 'border-red-500' : 'border-gray-100'}
             max-sm:h-12 text-black max-sm:focus:border-violet-500 max-sm:focus:ring-1 max-sm:focus:ring-violet-500 max-sm:transition-colors`}
             type='email'
             name='email'
@@ -138,7 +151,12 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
             onChange={handleChange}
             placeholder='example@gmail.com'
           />
+       {showErrors && errors.email && (
+                                <span className="text-red-500 text-xs">{errors.email}</span>
+          )}
         </div>
+
+      
 
         <div className='w-full h-[72px] gap-2 flex flex-col max-sm:gap-1'>
           <label className='h-[24px] text-white font-aspekta max-sm:text-sm max-sm:mb-1'>
@@ -153,7 +171,11 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
             onChange={handleChange}
             placeholder='+213 xxxxxxx'
           />
+              {showErrors && errors.phoneNumber && (
+                                <span className="text-red-500 text-xs">{errors.phoneNumber}</span>
+          )}
         </div>
+
       </div>
 
       {/* Button Container */}

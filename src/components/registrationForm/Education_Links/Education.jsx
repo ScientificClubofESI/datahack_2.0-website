@@ -1,17 +1,4 @@
 import React, { useState } from 'react';
-
-const universities = [
-    'University of Example',
-    'Sample State University',
-    'Tech Institute',
-];
-
-const degrees = [
-    'cp1/l1',
-    'cp2/l2',
-    'cs1/l3',
-];
-
 const Education = ({ handleNext, handleBack,handleChange,formData }) => {
 
 
@@ -26,24 +13,28 @@ const Education = ({ handleNext, handleBack,handleChange,formData }) => {
         // Vérifier université
         if (!formData.university) {
             newErrors.university = 'Please select a university';
-        }
+        }else if (!/^[a-zA-Z]+$/.test(formData.university)) {
+            newErrors.university = "University name should only contain letters";
+          }
 
         // Vérifier major
         if (!formData.major) {
             newErrors.major = 'Please enter your major';
-        }
+        }else if (!/^[a-zA-Z]+$/.test(formData.major)) {
+            newErrors.major = "University major should only contain letters";
+          }
 
         // Vérifier degree
         if (!formData.degree) {
             newErrors.degree = 'Please select your degree';
         }
-
+        
         // Vérifier graduation year
         if (!formData.graduationYear) {
             newErrors.graduationYear = 'Please enter your graduation year';
         } else if (!/^\d{4}$/.test(formData.graduationYear)) {
             newErrors.graduationYear = 'Please enter a valid year (YYYY)';
-        }
+        } 
 
         setErrors(newErrors);
         setShowErrors(true);
@@ -74,21 +65,18 @@ const Education = ({ handleNext, handleBack,handleChange,formData }) => {
                    
 
                     <div className="space-y-6">
-                        <div className="space-y-2">
+                    <div className="space-y-2">
                             <label className="block text-sm">
-                                University <span className="text-red-500">*</span>
+                                University  <span className="text-red-500">*</span>
                             </label>
-                            <select 
-                                name="university"
+                            <input
+                                type="text"
+                                name="University"
+                                placeholder="Enter your University"
                                 value={formData.university}
                                 onChange={handleChange}
                                 className={`w-full p-2 rounded bg-white border ${showErrors && errors.university ? 'border-red-500' : 'border-gray-700'} text-black`}
-                            >
-                                <option value="">Select an option</option>
-                                {universities.map((uni, index) => (
-                                    <option key={index} value={uni}>{uni}</option>
-                                ))}
-                            </select>
+                            />
                             {showErrors && errors.university && (
                                 <span className="text-red-500 text-xs">{errors.university}</span>
                             )}
