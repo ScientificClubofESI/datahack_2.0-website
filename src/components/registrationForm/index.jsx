@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import Education from './education_Links/Education';
-import Links from './education_Links/Links';
 import RegistrationBasicDetails from './registrationBasicDetails';
 import SkillsInterests from './skillinterest';
-import InputFrame from './motivation/motivation_1';
-import Team from './motivation/team_1';
+import Education from './education_Links/Education';
+import Links from './education_Links/Links';
+import InputFrame from './motivation/motivation';
+import Team from './motivation/team';
+
 
 const FormController = ({ onClose }) => {
   const [step, setStep] = useState(0);
