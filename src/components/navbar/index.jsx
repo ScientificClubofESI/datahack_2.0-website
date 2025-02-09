@@ -20,7 +20,6 @@ export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [showBackToTop, setShowBackToTop] = useState(false);
 
   const openRegistrationModal = () => {
     setIsRegistrationModalOpen(true);
@@ -57,13 +56,6 @@ export default function NavBar() {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = (window.scrollY / totalHeight) * 100;
       setScrollProgress(progress);
-
-      // Show/hide "Back to Top" button
-      if (window.scrollY > 500) {
-        setShowBackToTop(true);
-      } else {
-        setShowBackToTop(false);
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
