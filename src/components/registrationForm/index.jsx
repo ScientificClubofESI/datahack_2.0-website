@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import RegistrationBasicDetails from './registrationBasicDetails';
 import SkillsInterests from './skillinterest';
-import Education from './education_Links/Education';
-import Links from './education_Links/Links';
+import Education from './education_Links/education';
+import Links from './education_Links/links';
 import InputFrame from './motivation/motivation';
 import Team from './motivation/team';
 

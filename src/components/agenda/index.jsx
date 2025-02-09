@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import DayCard from './DayCard';
+import DayCard from './dayCard';
 import PauseIcon from '../../../public/icons/pause_icon.svg';
 import PlayIcon from '../../../public/icons/play_icon.svg';
 import LeftIcon from '../../../public/icons/right_arrow_icon.svg';

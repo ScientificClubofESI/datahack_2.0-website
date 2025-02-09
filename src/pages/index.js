@@ -1,6 +1,6 @@
 import Agenda from "@/components/agenda";
 import BackgroundShapes from "@/components/backGround";
-import FAQ from "@/components/FAQ";
+import FAQ from "@/components/faq";
 import Footer from "@/components/footer";
 import HomeSection from "@/components/home";
 import Mentors from "@/components/mentors";

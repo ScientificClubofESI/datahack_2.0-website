@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Education from "../registrationForm/education_Links/Education";
+import Education from "../registrationForm/education_Links/education";
 import FormController from "../registrationForm";
 
 const navLinks = [
