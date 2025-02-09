@@ -163,7 +163,7 @@ const MentorsSection = () => {
         </div>
 
         {/* Desktop Thumbnails Column */}
-        <div className="flex flex-row -order-first 2lg:-order-none justify-center 2lg:flex-col gap-4 2lg:mr-20 ">
+        <div className="flex flex-row -order-first 2lg:-order-none justify-center 2lg:justify-start 2lg:flex-col gap-4 2lg:mr-20 ">
           {mentors.map((mentor, index) => (
             <button
               key={mentor.id}

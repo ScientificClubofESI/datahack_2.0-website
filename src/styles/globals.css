@@ -13,9 +13,13 @@
     color: transparent;
 }
 
-  
-  body {
-    background-color: #020203;
+html {
+  scroll-behavior: smooth;
+}
 
-  }
+  
+body {
+  background-color: #020203;
+
+}
 
