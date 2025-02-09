@@ -49,15 +49,14 @@ const HomeSection = () => {
               />
             </div>
             {/* Content with Gradient Border */}
-            <div className="pl-4 transition-all duration-150" style={{ borderLeft: `4px solid ${borderGradient}` }}>
-              <h2 className="font-light text-lg mb-6 pl-14">
-                <span className="bg-gradient-to-r from-[#8833FF] to-[#00C2FF] bg-clip-text text-transparent">
+            <div className="pl-4 transition-all duration-150 " style={{ borderLeft: `4px solid ${borderGradient}` }}>
+              <h2 className="text-2xl font-medium mb-6 pl-14">
+                <span className="bg-gradient-to-r font-hubotSans from-[#8833FF] to-[#00C2FF] bg-clip-text text-transparent">
                   // In Data We Trust
                 </span>
               </h2>
-              <p className="text-gray-300 mb-6 pl-14 line-clamp-2 max-w-xl text-opacity-70 ">
-                Lorem ipsum dolor sit amet consectetur. Id enim ultrices elementum amet est elementum eget tortor adipiscing. Mattis amet ridiculus euismod nulla sed morbi eget ac.
-              </p>
+              <p className="text-gray-300 mb-6 pl-14 line-clamp-2 text-base max-w-3xl text-opacity-70 ">
+                  Join us in a 3-day datathon where participants build and train AI solutions to solve real-world problems using practical datasets. Compete, innovate, and win!              </p>
               <div className="space-y-2 text-gray-300 mb-6 pl-14 font-semibold">
                 <p>January 14th - 16th</p>
                 <p>ESI - Ecole National Supérieur d'Informatique</p>
