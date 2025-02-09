@@ -28,8 +28,6 @@ const validateForm = () => {
   // Validate skills
   if (!formData.skills) {
     newErrors.skills = "Please enter your first Name";
-  }else if (!/^[a-zA-Z]+$/.test(formData.skills)) {
-    newErrors.skills = "First name should only contain letters";
   }
 
  

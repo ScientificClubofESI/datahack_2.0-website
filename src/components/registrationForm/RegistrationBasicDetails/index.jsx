@@ -160,7 +160,7 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
 
         <div className='w-full h-[72px] gap-2 flex flex-col max-sm:gap-1'>
           <label className='h-[24px] text-white font-aspekta max-sm:text-sm max-sm:mb-1'>
-            phoneNumber Number <span className='text-red-500'>*</span>
+            phone Number <span className='text-red-500'>*</span>
           </label>
           <input
             className={`w-full h-[40px] rounded-md border p-4 font-aspekta ${errors.phoneNumber ? 'border-red-500' : 'border-gray-100'}

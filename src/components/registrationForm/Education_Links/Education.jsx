@@ -13,16 +13,12 @@ const Education = ({ handleNext, handleBack,handleChange,formData }) => {
         // Vérifier université
         if (!formData.university) {
             newErrors.university = 'Please select a university';
-        }else if (!/^[a-zA-Z]+$/.test(formData.university)) {
-            newErrors.university = "University name should only contain letters";
-          }
+        }
 
         // Vérifier major
         if (!formData.major) {
             newErrors.major = 'Please enter your major';
-        }else if (!/^[a-zA-Z]+$/.test(formData.major)) {
-            newErrors.major = "University major should only contain letters";
-          }
+        }
 
         // Vérifier degree
         if (!formData.degree) {
@@ -71,7 +67,7 @@ const Education = ({ handleNext, handleBack,handleChange,formData }) => {
                             </label>
                             <input
                                 type="text"
-                                name="University"
+                                name="university"
                                 placeholder="Enter your University"
                                 value={formData.university}
                                 onChange={handleChange}
@@ -101,20 +97,16 @@ const Education = ({ handleNext, handleBack,handleChange,formData }) => {
 
                         <div className="space-y-2">
                             <label className="block text-sm">
-                                Degree <span className="text-red-500">*</span>
+                               Degree <span className="text-red-500">*</span>
                             </label>
-                            <select 
+                            <input
+                                type="text"
                                 name="degree"
+                                placeholder="Enter your degree"
                                 value={formData.degree}
                                 onChange={handleChange}
                                 className={`w-full p-2 rounded bg-white border ${showErrors && errors.degree ? 'border-red-500' : 'border-gray-700'} text-black`}
-                            >
-                                <option value="">Select an option</option>
-                                {degrees.map((unii, indexx) => (
-                                    <option key={indexx} value={unii}>{unii}</option>
-                                ))}
-                            </select>
-                        
+                            />
                             {showErrors && errors.degree && (
                                 <span className="text-red-500 text-xs">{errors.degree}</span>
                             )}

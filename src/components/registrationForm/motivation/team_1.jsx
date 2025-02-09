@@ -47,6 +47,7 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
     let newErrors = {};
     setErrors(newErrors);
     setShowErrors(true);
+    
     return Object.keys(newErrors).length === 0;
   };
 
@@ -60,8 +61,24 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
   };
 
   const isFormComplete = () => {
-    return formData.university !== '' && formData.major !== '' && formData.degree !== '' && formData.graduationYear !== '';
+    // Check if all required fields are filled
+   
+      if (hasTeam) {
+        return formData.teamCode !== '' || formData.teamName !== '';
+       }
+       else{
+        return true;
+       }
+    
   };
+  const handleJoinTeam = () => {
+    setJoinTeam(true);
+    setChaine('teamCode');
+  };
+  const handleCreateTeam = () => {
+    setJoinTeam(false);
+    setChaine('teamName');
+  }
 
   return completed ? (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -80,15 +97,15 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
             Do you have a team?
             <span className="text-red-500">*</span>
           </label>
-          <div className='flex flex-row'>
+          <div className='flex flex-row  gap-4'>
             <button
               onClick={() => setHasTeam(true)}
-              className={`px-5 py-1 bg-gray-700 text-white rounded-md ${hasTeam ? 'ring-2 ring-blue-500' : ''}`}>
+              className={` px-10  ${hasTeam? "bg-white" : " bg-neutral-900"} ${hasTeam ? "text-Primary-800" : " text-neutral-600"} rounded-md ${hasTeam ? 'ring-2  ring-Primary-800 ' : ''}`}>
               YES
             </button>
             <button
               onClick={() => setHasTeam(false)}
-              className={`px-5 py-1 text-white rounded-md ${!hasTeam ? 'ring-2 ring-blue-500' : ''}`}>
+              className={`px-10  ${!hasTeam? "bg-white" : " bg-neutral-900"} ${!hasTeam ? "text-Primary-800" : " text-neutral-600"} rounded-md ${!hasTeam ? 'ring-2  ring-Primary-800 ' : ''}`}>
               NO
             </button>
           </div>
@@ -102,12 +119,12 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
             </label>
             <div className="flex space-x-4 mb-8">
               <button
-                onClick={() => setJoinTeam(true)}
+                onClick={() => handleJoinTeam()}
                 className={`px-4 py-2 bg-gray-700 text-white rounded ${joinTeam ? 'ring-2 ring-blue-500' : ''}`}>
                 Join Your Team
               </button>
               <button
-                onClick={() => setJoinTeam(false)}
+                onClick={() => handleCreateTeam()}
                 className={`px-4 py-2 bg-blue-500 text-white rounded ${!joinTeam ? 'ring-2 ring-blue-700' : ''}`}>
                 Create a Team
               </button>
@@ -131,6 +148,25 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
             </div>
           </div>
         )}
+       
+          <div className='flex flex-col w-full max-w-3xl'>
+         
+         <label className="text-white text-xl mb-4">
+          Anything to add ? 
+       
+        </label>
+        <textarea
+          className=" text-black w-full h-28 px-6 py-3 mb-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          onChange={handleChange}
+          id="info2"
+          name="Anything"
+          type="text"
+          value={formData.comment}
+          placeholder="Your answer here..."
+        ></textarea>
+          </div>
+       
+
 
       </div>
       <div className="flex justify-between pt-12 md:pt-0 md:mt-5 bg-black">
