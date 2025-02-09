@@ -4,6 +4,7 @@ import SkillsInterests from './skillinterest';
 import Links from '../education_Links/links';
 import InputFrame from './motivation/motivation';
 import Team from './motivation/team';
+import Education from '../education_Links/education';
 
 
 
@@ -64,7 +65,7 @@ const FormController = ({ onClose }) => {
 
         {step === 0 && <RegistrationBasicDetails handleNext={handleNext} handleChange={handleChange} formData={formData} />}
         {step === 1 && <SkillsInterests handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
-        {step === 2 && <Edu handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
+        {step === 2 && <Education handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
         {step === 3 && <Links handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
         {step === 4 && <InputFrame handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
         {step === 5 && <Team handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} onClose={onClose} />}
