@@ -11,7 +11,7 @@ const Agenda = () => {
 
   // States for current index and pause/play toggle
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isPaused, setIsPaused] = useState(false); 
   const [progress, setProgress] = useState(0);
 
   // Automatic sliding logic
