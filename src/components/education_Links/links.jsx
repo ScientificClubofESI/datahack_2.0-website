@@ -66,7 +66,7 @@ return (
                     <input
     type="text"
     name="cv"
-    placeholder="Please upload your CV"
+    placeholder="Link to your CV"
     value={formData.cv }
     onChange={handleChange}
     className={`w-full p-2 rounded bg-white border ${

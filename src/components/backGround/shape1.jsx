@@ -16,7 +16,7 @@ const BackgroundShapes = () => (
       alt="" 
       width={1200}
       height={2000}
-      className="absolute right-0  opacity-20" 
+      className="absolute right-0 md:flex hidden opacity-20" 
     />
   </div>
 );
