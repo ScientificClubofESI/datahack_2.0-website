@@ -10,38 +10,43 @@ const Agenda = () => {
   const days = [
     {
       number: 1,
-      date: 'Thu 14. 01. 2025',
+      date: 'Thu 20. 02. 2025',
       schedule: [
-        { time: '5 PM - 6 PM', activity: 'Check In' },
+        { time: '4 PM - 6 PM', activity: 'Check In' },
         { time: '6 PM - 7 PM', activity: 'Opening Ceremony' },
-        { time: '7 PM - 8 PM', activity: 'Ice Break Activities' },
-        { time: '8 PM - 9 PM', activity: 'Diner' },
-        { time: '9 PM - 11 PM', activity: 'Hacking Starts' },
-        { time: '11 PM - 12 AM', activity: 'Break' }
+        { time: '7 PM - 9 PM', activity: 'Let the hack begin + ice breaking' },
+        { time: '9 PM - 10 PM', activity: 'Dinner break' },
+        { time: '', activity: '' },
+        { time: '', activity: '' },
+        { time: '', activity: '' },
+        { time: '', activity: '' },
       ]
     },
     {
       number: 2,
-      date: 'Fri 14. 01. 2025',
+      date: 'Sat 22. 02. 2025',
       schedule: [
-        { time: '5 PM - 6 PM', activity: 'Check In' },
-        { time: '6 PM - 7 PM', activity: 'Opening Ceremony' },
-        { time: '7 PM - 8 PM', activity: 'Ice Break Activities' },
-        { time: '8 PM - 9 PM', activity: 'Diner' },
-        { time: '9 PM - 11 PM', activity: 'Hacking Starts' },
-        { time: '11 PM - 12 AM', activity: 'Break' }
+        { time: '2 AM', activity: 'Midnight break' },
+        { time: '7 AM - 10 AM', activity: 'Breakfast' },
+        { time: '10 AM - 11 AM', activity: 'Workshop : A ' },
+        { time: '12 AM - 3 PM', activity: 'Lunch break' },
+        { time: '5 PM - 6 PM', activity: 'Coffee break' },
+        { time: '7 PM - 8 AM', activity: 'Workshop : B' },
+        { time: '9 PM - 10 AM', activity: 'Dinner break' }
       ]
+      
     },
     {
+      
       number: 3,
-      date: 'Sat 14. 01. 2025',
+      date: 'Fri 21. 02. 2025',
       schedule: [
-        { time: '5 PM - 6 PM', activity: 'Check In' },
-        { time: '6 PM - 7 PM', activity: 'Opening Ceremony' },
-        { time: '7 PM - 8 PM', activity: 'Ice Break Activities' },
-        { time: '8 PM - 9 PM', activity: 'Diner' },
-        { time: '9 PM - 11 PM', activity: 'Hacking Starts' },
-        { time: '11 PM - 12 AM', activity: 'Break' }
+        { time: '2 AM', activity: 'Midnight break' },
+        { time: '7 AM - 8 AM', activity: 'Breakfast' },
+        { time: '12 AM', activity: 'Submissions' },
+        { time: '12:45 AM - 1:45 PM', activity: 'Lunch break' },
+        { time: '2:30 PM - 4 PM', activity: 'Networking session' },
+        { time: '4 PM - 5 PM', activity: 'Closing ceremony + announcement of the winners' }
       ]
     }
   ];
@@ -109,12 +114,14 @@ const Agenda = () => {
                 zIndex: position === 1 ? 20 : 10
               }}
             >
-              <div className={`
+              <div className={`p-[2px] ${position === 1 ? 'bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] rounded-lg': ''}`}>
+
+  <div className={`
                 relative p-4 md:p-8 rounded-xl 
-                backdrop-blur-lg
+                
                 border border-[#ffffff20] 
                 shadow-lg
-                ${position === 1 ? 'bg-[#00050A]/40' : 'bg-[#00050A]/30'}
+                ${position === 1 ? 'bg-black' : 'bg-[#00050A]/30 backdroup-blur-sm'}
                 h-auto md:h-full
                 max-h-[70vh] md:max-h-none
                 overflow-y-auto md:overflow-visible
@@ -135,6 +142,9 @@ const Agenda = () => {
                   ))}
                 </div>
               </div>
+
+</div>
+              
             </div>
           );
         })}
