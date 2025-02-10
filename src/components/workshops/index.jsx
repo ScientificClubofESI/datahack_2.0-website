@@ -19,10 +19,20 @@ const Workshops = ()=>{
     return () => clearTimeout(timer)
   }, [activeWorkshop, index])
   return(
-    <main className='text-Monotone-White pt-12 xl:pt-20  flex flex-col justify-center gap-16 items-center  relative '>
+   <main className='text-Monotone-White pt-12 xl:pt-20  flex flex-col justify-center gap-16 items-center  relative '>
         <h1 className='font-hubotSans text-2xl 2lg:text-5xl font-semibold mx-auto text-white'>Workshops</h1>
         <section className='flex flex-col justify-center gap-10 xl:gap-12 xl:flex-row xl:justify-around xl:items-center'>
-            <section className='flex justify-center items-center'>
+
+          <div className=" font-semibold bg-Tritary-400 py-2 px-12 rounded transition-all duration-300 
+                hover:shadow-[0_0_25px_rgba(136,232,255,0.6)] hover:transform hover:scale-105
+                 shadow-[0_0_15px_rgba(136,232,255,0.4)]
+                
+                before:from-transparent before:to-[rgba(136,232,255,0.1)] before:opacity-0
+                hover:before:opacity-100 before:transition-opacity before:duration-300  rounded-2xl
+                ">
+            COMING SOON !! 
+          </div>
+          {/*   <section className='flex justify-center items-center'>
          
               <section className='grid grid-cols-1 gap-4 items-center justify-center lg:w-[400px] lg:ml-10'>
                   <p className={`text-sm border-2 border-solid bg-Monotone-Black px-8 py-2 lg:py-4 rounded-sm lg:font-semibold lg:text-base ${ activeWorkshop === "Data visualization" ? "gradient-border gradient-text  xl:scale-[1.15] xl:font-bold" : "border-Neutral-950" }`}>Data visualization</p>
@@ -44,9 +54,10 @@ const Workshops = ()=>{
                 <p className='text-sm lg:text-base font-aspekta font-semibold'>1PM-3PM</p>
                 <p className='text-base lg:text-lg font-aspekta font-medium'>11.01.2025</p>
               </nav>
-            </div>
+            </div>*/}
         </section>
     </main>
+  
   
   );
 }

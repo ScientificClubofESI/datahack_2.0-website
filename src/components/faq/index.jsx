@@ -36,10 +36,10 @@ const FAQ = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="max-w-3xl w-full p-12">
+    <div className="min-h-screen bg-black  z-10 flex items-center justify-center">
+      <div className="max-w-3xl w-full md:p-12 ">
         <div
-          className="border-2 border-transparent p-12 rounded-lg"
+          className="border-2 border-transparent p-12 rounded-md"
           style={{
             borderImage: 'linear-gradient(90deg, #6F06C1, #4EA4F9, #36D9FF) 1',
           }}
@@ -52,9 +52,9 @@ const FAQ = () => {
             {faqs.map((faq, index) => (
               <div key={index} className="rounded-md shadow-sm p-3">
                 <div className="flex justify-between items-center border-b border-gray-500 pb-2">
-                  <li className="text-sm font-semibold text-Monotone-White">
+                  <div className="text-sm font-semibold text-Monotone-White">
                     {index + 1}. {faq.question}
-                  </li>
+                  </div>
                   <button
                     onClick={() => toggleFAQ(index)}
                     className="text-Primary-500 text-xl focus:outline-none"
