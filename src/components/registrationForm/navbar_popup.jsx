@@ -1,20 +1,45 @@
-import React, { useState, useEffect } from 'react';
+
+import React from 'react';
+
+const steps = [
+  "Basic Details",
+  "Skills & Interests",
+  "Education",
+  "Links",
+  "Motivation",
+  "Team",
+];
 
 const Navbar_popup = ({ num }) => {
-
   return (
-   <div>
-     <div className="absolute w-1/2 md:w-5/12 h-1 bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] mt-0 z-10"></div>
-    <div className="absolute z-10 mt-3 flex gap-14 mb-12 flex-center ml-8">
-        <span className="hidden md:flex text-[#530490]">Basic Details</span>
-        <span className="text-[#530490] hidden md:flex">Skills & Interests</span>
-        <span className="text-[#530490] hidden md:flex">Education</span>
-        <span className="text-xl bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] bg-clip-text text-transparent">
-            Links
-        </span>
+    <div className="relative w-full flex flex-col items-center">
+      {/* Progress Bar */}
+      <div className="relative w-full h-1 md:bg-black">
+        <div
+          className="absolute h-full bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] transition-all duration-500"
+          style={{ width: `${(num / (steps.length - 1)) * 100}%` }}
+        />
+      </div>
+
+      {/* Step Labels */}
+      <div className="relative z-10 mt-3 flex gap-6 md:gap-14 justify-center">
+        {steps.map((step, index) => (
+          <span
+            key={index}
+            className={`text-lg ${
+              index < num
+                ? "md:text-[#530490] hidden" // Past steps in violet
+                : index === num
+                ? "bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] bg-clip-text text-transparent font-bold" // Active step in gradient
+                : "text-black hidden md:flex" // Future steps hidden
+            } transition-all duration-300`}
+          >
+            {step}
+          </span>
+        ))}
+      </div>
     </div>
-   </div>
   );
-}
+};
 
 export default Navbar_popup;

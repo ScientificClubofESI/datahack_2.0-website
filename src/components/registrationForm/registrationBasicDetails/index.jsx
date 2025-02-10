@@ -75,7 +75,7 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
 
   return (
     <section className=' h-full  w-full flex flex-col justify-between'>
-    
+  
     
 
       {/* Form Container */}

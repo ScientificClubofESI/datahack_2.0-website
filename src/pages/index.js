@@ -13,11 +13,13 @@ import BackgroundShapes_two from "@/components/backGround/shape2";
 import BackgroundShapes_three from "@/components/backGround/shape3";
 import BackgroundShapes_four from "@/components/backGround/shape4";
 import BackgroundShapes_five from "@/components/backGround/shape5";
+import Navbar_popup from "@/components/registrationForm/navbar_popup";
 
 export default function Home() {
   return (
 
     <div className="bg-background-Dark h-screen">
+    
     <BackgroundShapes />
       <Navbar />
       <section id="home">
