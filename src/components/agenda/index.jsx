@@ -24,22 +24,22 @@ const Agenda = () => {
     },
     {
       number: 2,
-      date: 'Sat 22. 02. 2025',
+      date: 'Fri 21. 02. 2025',
       schedule: [
         { time: '2 AM', activity: 'Midnight break' },
         { time: '7 AM - 10 AM', activity: 'Breakfast' },
         { time: '10 AM - 11 AM', activity: 'Workshop : A ' },
         { time: '12 AM - 3 PM', activity: 'Lunch break' },
         { time: '5 PM - 6 PM', activity: 'Coffee break' },
-        { time: '7 PM - 8 AM', activity: 'Workshop : B' },
-        { time: '9 PM - 10 AM', activity: 'Dinner break' }
+        { time: '7 PM - 8 PM', activity: 'Workshop : B' },
+        { time: '9 PM - 10 PM', activity: 'Dinner break' }
       ]
       
     },
     {
       
       number: 3,
-      date: 'Fri 21. 02. 2025',
+      date: 'Sat 22. 02. 2025',
       schedule: [
         { time: '2 AM', activity: 'Midnight break' },
         { time: '7 AM - 8 AM', activity: 'Breakfast' },
