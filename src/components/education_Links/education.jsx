@@ -44,25 +44,17 @@ const Education = ({ handleNext, handleBack,handleChange,formData }) => {
     };
 
     return ( 
-        <div className=" bg-background-Dark  text-white">
+        <div className=" bg-background-Dark  h-full md:text-base  text-sm   text-white">
             
             
-            <form className="max-w-5xl mx-auto md:pt-8 md:px-4">
-               
-                <div className=' absolute w-1/2 md:w-1/3 h-1 bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] mt-0 z-10'></div>
-                <div className=" absolute z-10 mt-3  flex gap-14 mb-12 flex-center ml-8">
-                        <span className=" hidden md:flex text-[#530490]">Basic Details</span>
-                        <span className="text-[#530490]  hidden md:flex ">Skills & Interests</span>
-                        <span className=" text-xl bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] bg-clip-text text-transparent">
-                            Education
-                        </span>
-                    </div>
-                <div className="bg-black min-w-full px-5 md:px-28 pb-12 md:pb-20 pt-24">
+            <form className="flex flex-col  h-full justify-between">
+       
+                <div className=" min-w-full   ">
                    
 
-                    <div className="space-y-6">
+                    <div className="space-y-6 ">
                     <div className="space-y-2">
-                            <label className="block text-sm">
+                            <label className="block ">
                                 University  <span className="text-red-500">*</span>
                             </label>
                             <input
@@ -79,7 +71,7 @@ const Education = ({ handleNext, handleBack,handleChange,formData }) => {
                         </div>
 
                         <div className="space-y-2">
-                            <label className="block text-sm">
+                            <label className="block ">
                                 University Major <span className="text-red-500">*</span>
                             </label>
                             <input
@@ -96,7 +88,7 @@ const Education = ({ handleNext, handleBack,handleChange,formData }) => {
                         </div>
 
                         <div className="space-y-2">
-                            <label className="block text-sm">
+                            <label className="block ">
                                Degree <span className="text-red-500">*</span>
                             </label>
                             <input
@@ -113,7 +105,7 @@ const Education = ({ handleNext, handleBack,handleChange,formData }) => {
                         </div>
 
                         <div className="space-y-2">
-                            <label className="block text-sm">
+                            <label className="block ">
                                 Expected graduation year <span className="text-red-500">*</span>
                             </label>
                             <input
@@ -131,17 +123,17 @@ const Education = ({ handleNext, handleBack,handleChange,formData }) => {
                     </div>
                 </div>
 
-                <div className="flex justify-between pt-12 md:pt-0 md:mt-5 bg-black  ">
+                <div className="flex justify-between  ">
                     <button 
-                    onClick={handleBack}
+                        onClick={handleBack}
                         type="button" 
-                        className="bg-purple-700 text-white px-6 py-2 rounded flex items-center justify-center ml-7 md:ml-0  w-16 h-7"
+                        className="bg-purple-700 px-4 text-white   rounded flex items-center justify-center  "
                     >
-                        <span className="mr-2 text-sm rotate-[180deg] mt-2 flex  ">➜</span> 
+                        <span className=" text-sm rotate-[180deg]  flex  ">➜</span> 
                     </button>
 
 
-<button 
+  <button 
     type="button"
     onClick={() => {
         if (validateForm()) {
@@ -149,13 +141,14 @@ const Education = ({ handleNext, handleBack,handleChange,formData }) => {
         }
       }} 
     disabled={!isFormComplete()}
-    className={`bg-purple-700 text-white flex px-6 py-2 rounded items-center justify-center h-7 w-16 md:w-44 ${!isFormComplete() ? 'opacity-50 cursor-not-allowed' : ''} mb-24 mr-7 md:mr-0`}
+    className={`bg-purple-700 text-white flex px-6 py-2 rounded items-center justify-center  ${!isFormComplete() ? 'opacity-50 cursor-not-allowed' : ''} `}
 >    
-    <span className='hidden md:flex'>Next</span>
-    <span className="ml-2 text-sm">➜</span>
+ <div className='flex flex-row gap-2 justify-center items-center'>
+ <span className='hidden md:flex'>Next </span>
+ <span className=" text-sm">➜</span>
+ </div>
 </button>
-                   
-                </div>
+ </div>
             </form>
         </div>
     );
