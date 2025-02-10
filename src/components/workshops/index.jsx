@@ -19,7 +19,7 @@ const Workshops = ()=>{
     return () => clearTimeout(timer)
   }, [activeWorkshop, index])
   return(
-   <main className='text-Monotone-White pt-12 xl:pt-20  flex flex-col justify-center gap-16 items-center  relative '>
+   <main className='text-Monotone-White pt-12 xl:pt-20  flex flex-col justify-center gap-16 items-center   mb-24 relative '>
         <h1 className='font-hubotSans text-2xl 2lg:text-5xl font-semibold mx-auto text-white'>Workshops</h1>
         <section className='flex flex-col justify-center gap-10 xl:gap-12 xl:flex-row xl:justify-around xl:items-center'>
 

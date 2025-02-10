@@ -95,7 +95,7 @@ const Agenda = () => {
 
   return (
     <section className="overflow-hidden min-h-screen w-full flex flex-col justify-center items-center text-Monotone-White px-4">
-      <h1 className="text-3xl md:text-5xl mb-32 md:mb-6">Agenda</h1>
+      <h1 className="text-3xl md:text-5xl   mb-44 md:mb-0">Agenda</h1>
       <div className="relative flex items-center justify-center w-full h-auto md:h-[80vh] py-8">
         {days.map((day, index) => {
           const position = (index - currentIndex + days.length) % days.length;
@@ -150,7 +150,7 @@ const Agenda = () => {
         })}
       </div>
 
-      <div className="w-full md:w-[35%] h-1 bg-[#00050A] rounded mt-32 md:mt-6">
+      <div className="w-full md:w-[35%] h-1 bg-[#00050A] rounded mt-32 md:mt-0">
         <div
           className="h-full bg-Primary-600 rounded transition-all duration-50 "
           style={{ width: `${progress}%` }}

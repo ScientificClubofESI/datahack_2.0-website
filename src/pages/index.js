@@ -14,6 +14,7 @@ import BackgroundShapes_three from "@/components/backGround/shape3";
 import BackgroundShapes_four from "@/components/backGround/shape4";
 import BackgroundShapes_five from "@/components/backGround/shape5";
 import Navbar_popup from "@/components/registrationForm/navbar_popup";
+import PartnersLMCS from "@/components/partners/index2";
 
 export default function Home() {
   return (
@@ -41,6 +42,7 @@ export default function Home() {
       </section>
       <BackgroundShapes_three/>
       <Partners />
+      <PartnersLMCS />
       <BackgroundShapes_four />
       <section id="faq">
         <FAQ />

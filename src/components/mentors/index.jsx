@@ -74,7 +74,7 @@ const MentorsSection = () => {
   };
 
   return (
-    <div className="flex flex-col w-full gap-16 py-[120px] 2lg:py-[120px] relative ">
+    <div className="flex flex-col w-full gap-16  relative ">
       
       <h1 className="font-hubotSans text-2xl 2lg:text-5xl font-semibold mx-auto text-white">Mentors</h1>
 
