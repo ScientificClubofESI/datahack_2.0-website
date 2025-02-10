@@ -40,7 +40,6 @@ const Partners = () => {
       ref={sectionRef}
       className="text-Monotone-White flex flex-col items-center justify-center gap-10 py-24 lg:px-28"
     >
-      <div className="absolute inset-0 bg-Primary-500 opacity-[0.03]"></div>
       <h2 className="font-hubotSans text-3xl lg:text-5xl font-semibold text-center">
         Our Partner
       </h2>
