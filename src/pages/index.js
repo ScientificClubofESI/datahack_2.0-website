@@ -13,6 +13,7 @@ import About from "@/components/about";
 
 export default function Home() {
   return (
+
     <div className="bg-background-Dark h-screen">
       <BackgroundShapes />
       <Navbar />
@@ -39,5 +40,6 @@ export default function Home() {
       <Sponsors />
       <Footer />
     </div>
+
   );
 }
