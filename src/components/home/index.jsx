@@ -59,8 +59,8 @@ const HomeSection = () => {
                   Join us in a 3-day datathon where participants build and train AI solutions to solve real-world problems using practical datasets. Compete, innovate, and win!              </p>
               <div className="space-y-2 text-gray-300 mb-6 pl-14 font-semibold">
                 <p>February 20th - 22nd</p>
-                <p>ESI - Ecole National Supérieur d'Informatique</p>
-                <p>Algiers, Oued Smar</p>
+                <p>ESI - école nationale supérieure d'informatique</p>
+                <p>Oued Smar, Algiers </p>
               </div>
               <button
                 className="ml-14 font-semibold bg-Tritary-400 py-2 px-10 rounded transition-all duration-300 
