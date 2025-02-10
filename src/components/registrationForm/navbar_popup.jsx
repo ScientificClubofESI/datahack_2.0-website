@@ -28,7 +28,7 @@ const Navbar_popup = ({ num }) => {
             key={index}
             className={`text-lg ${
               index < num
-                ? "md:text-[#530490] hidden" // Past steps in violet
+                ? "md:text-[#530490]  md:flex hidden " // Past steps in violet
                 : index === num
                 ? "bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] bg-clip-text text-transparent font-bold" // Active step in gradient
                 : "text-black hidden md:flex" // Future steps hidden
