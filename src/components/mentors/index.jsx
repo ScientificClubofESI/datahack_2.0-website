@@ -22,9 +22,9 @@ const MentorsSection = () => {
     {
       id: 3,
       name: "Younes Boukacem ",
-      title: "AI Engineer - Tech Corp",
-      role: "Machine Learning Specialist",
-      description: "Experienced in developing machine learning models and deploying AI solutions for various industries. Focused on innovation and problem-solving.",
+      title: "5th year intelligent Systems and Data student at ESI",
+      role: "Research intern at NYUAD",
+      description: "Specialized in NLP, LLMs",
       image: "/images/mentors/image4.png", 
     },
     {
