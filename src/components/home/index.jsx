@@ -58,7 +58,7 @@ const HomeSection = () => {
               <p className="text-gray-300 mb-6 pl-14 line-clamp-2 text-base max-w-3xl text-opacity-70 ">
                   Join us in a 3-day datathon where participants build and train AI solutions to solve real-world problems using practical datasets. Compete, innovate, and win!              </p>
               <div className="space-y-2 text-gray-300 mb-6 pl-14 font-semibold">
-                <p>January 14th - 16th</p>
+                <p>February 20th - 22nd</p>
                 <p>ESI - Ecole National Supérieur d'Informatique</p>
                 <p>Algiers, Oued Smar</p>
               </div>
