@@ -48,13 +48,13 @@ const validateForm = () => {
 
 
   return (
-    <section className='bg-background-Dark  md:text-base  text-sm  w-full flex flex-col'>
+    <section className='justify-between  md:text-base  text-sm h-full  w-full flex flex-col'>
 
 
       {/* Form Container */}
-      <div className='w-full     gap-8 flex flex-col justify-center items-center max-sm:p-4 max-sm:pt-10 max-sm:h-auto'>
+      <div className='w-full     gap-8 flex flex-col justify-center items-center  max-sm:h-auto'>
         <div className='w-full gap-2 flex flex-col max-sm:gap-1 '>
-          <label className='h-[24px] text-white font-aspekta  max-sm:mb-1 pt-2 '>
+          <label className='h-[24px] text-white font-aspekta  max-sm:mb-1  '>
             Skills <span className='text-red-500'>*</span>
           </label>
           <p className='text-gray-400 mb-2 pb-1'>List up to 4 skills you consider yourself proficient at.</p>
@@ -134,7 +134,7 @@ const validateForm = () => {
  <span className=" text-sm">➜</span>
  </div>
 </button>
- </div>
+     </div>
     </section>
   );
 };

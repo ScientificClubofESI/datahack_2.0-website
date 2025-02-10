@@ -16,7 +16,6 @@ const RegistrationComplete = ({hasTeam, teamName,teamCode}) => {
           </button></div>
         <div className=" relative w-[1024px] h-[604px] bg-black flex items-center flex-col justify-center">
           {/*  progression */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF]"></div>
           {/* close button */}
           <button onClick={handleClose} className="absolute top-8 right-8 sm:hidden">
             <img src="/images/close.svg" alt="close icon" />

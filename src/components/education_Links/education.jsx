@@ -44,12 +44,12 @@ const Education = ({ handleNext, handleBack,handleChange,formData }) => {
     };
 
     return ( 
-        <div className=" bg-background-Dark  md:text-base  text-sm   text-white">
+        <div className=" bg-background-Dark  h-full md:text-base  text-sm   text-white">
             
             
-            <form className="">
+            <form className="flex flex-col  h-full justify-between">
        
-                <div className="bg-black min-w-full   ">
+                <div className=" min-w-full   ">
                    
 
                     <div className="space-y-6 ">

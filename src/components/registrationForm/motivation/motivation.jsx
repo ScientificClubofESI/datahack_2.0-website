@@ -39,7 +39,7 @@ export default function InputFrame({ handleNext, handleBack,handleChange, formDa
   };
 
   return (
-    <div className="bg-background-Dark w-full flex flex-col  md:text-base  text-sm    ">
+    <div className="bg-background-Dark w-full h-full  justify-between flex flex-col  md:text-base  text-sm    ">
       <div className="flex flex-col items-start w-full space-y-5">
         <label className="text-white  space-y-1 ">
           How did you hear about DATAHACK? 

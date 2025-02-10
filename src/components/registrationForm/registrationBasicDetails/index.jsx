@@ -74,7 +74,7 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
   };
 
   return (
-    <section className='bg-background-Dark  w-full flex flex-col'>
+    <section className=' h-full  w-full flex flex-col justify-between'>
     
     
 
@@ -158,14 +158,8 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
       </div>
 
       {/* Button Container */}
-      <div className="flex justify-between  ">
-                    <button 
-                        onClick={handleBack}
-                        type="button" 
-                        className="bg-purple-700 px-4 text-white   rounded flex items-center justify-center  "
-                    >
-                        <span className=" text-sm rotate-[180deg]  flex  ">➜</span> 
-                    </button>
+      <div className="flex justify-end mt-1 ">
+             
 
 
   <button 
@@ -183,7 +177,7 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
  <span className=" text-sm">➜</span>
  </div>
 </button>
- </div>
+      </div>
     </section>
   );
 }

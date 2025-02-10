@@ -106,27 +106,19 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
 
   return completed ? (
     
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ">
-
-      <div className="relative w-full max-w-4xl overflow-y-auto">
-        <div className="absolute right-0 cursor-pointer p-4 z-50" onClick={onClose}>
-          <span className="text-white font-bold text-2xl">X</span>
-        </div>
+  
         <RegistrationComplete hasTeam={hasTeam} teamName={teamName} teamCode={teamCode} />
-        <div>
-          
-        </div>
-      </div>
-    </div>
+
+   
   ) : (
     <>
     <Popup message={errorMessage} type="error" onClose={() => setErrorMessage("")} />
-    <div className="bg-black top-0 p-8 md:text-lg text-sm">
-      <div className="flex flex-col items-start  w-full max-w-3xl mx-auto">
-        <div className="flex md:flex-row flex-col justify-center gap-2 h-10 mb-8 ">
+    <div className="bg-black md:py-2 py-3 flex flex-col justify-between h-full md:text-lg text-sm">
+      <div className="flex flex-col items-start  w-full  ">
+        <div className="flex md:flex-row flex-col justify-center h-10 mb-8 gap-2 ">
           <label className="text-white  ">
             Do you have a team?
-            <span className="text-red-500"> * </span>
+            <span className="text-red-500">  * </span>
           </label>
           <div className='flex flex-row md:text-base  text-sm gap-4'>
             <button
@@ -143,10 +135,10 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
         </div>
 
         {hasTeam && (
-          <div className='flex flex-col   w-full max-w-3xl'>
+          <div className='flex flex-col  w-full  '>
             <label className="text-white  mb-4">
               Do you want to join your team or create a spot for your team?
-              <span className="text-red-500">*</span>
+              <span className="text-red-500">  *</span>
             </label>
             <div className="flex space-x-4 mb-8 h-10 md:text-base text-sm">
               <button
@@ -160,10 +152,10 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
                 Create a Team
               </button>
             </div>
-            <div>
+            <div className='w-full '> 
               <label className="text-white ">
                 {chaine}
-                <span className="text-red-500">*</span>
+                <span className="text-red-500">  *</span>
               </label>
               <p className="text-sm text-gray-400 py-2">
                 Please enter the {chaine} that was sent to the person who created the team.
@@ -180,14 +172,14 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
           </div>
         )}
        
-          <div className='flex flex-col w-full max-w-3xl'>
+          <div className='flex flex-col w-full'>
          
          <label className="text-white  mb-4">
           Anything to add ? 
        
         </label>
         <textarea
-          className=" text-black w-full h-28 px-6 py-3 mb-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className=" text-black w-full h-28 px-6 py-3  border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           onChange={handleChange}
           
           name="comment"
@@ -201,7 +193,7 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
 
       </div>
            {/* Button Container */}
-           <div className="flex justify-between  ">
+           <div className="flex justify-between   ">
                     <button 
                         onClick={handleBack}
                         type="button" 
@@ -216,13 +208,14 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
     onClick={() => {
         if (validateForm()) {
           handleSubmit();
+      
         }
       }} 
     disabled={!isFormComplete()}
-    className={`bg-purple-700 text-white flex px-6 py-2 rounded items-center justify-center  ${!isFormComplete() ? 'opacity-50 cursor-not-allowed' : ''} `}
+    className={`bg-purple-700 text-white flex px-6   py-2  rounded items-center justify-center  ${!isFormComplete() ? 'opacity-50 cursor-not-allowed' : ''} `}
 >    
- <div className='flex flex-row gap-2 justify-center items-center'>
- <span className='hidden md:flex'> {isSubmitting ? 'Submitting...' : 'Submit'} </span>
+<div className='flex flex-row gap-2 justify-center items-center'>
+<span className=' md:flex md:text-lg  text-ellipsis'> {isSubmitting ? 'Submitting...' : 'Submit'} </span>
 
  </div>
 </button>
@@ -238,7 +231,8 @@ const Popup = ({ message, type, onClose }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className={`bg-white p-6 rounded-lg shadow-lg max-w-sm text-center border ${type === 'error' ? 'border-red-500' : 'border-green-500'}`}>
+      <div className={`bg-white p-6 rounded-lg shadow-lg 
+         text-center border ${type === 'error' ? 'border-red-500' : 'border-green-500'}`}>
         <h2 className={`text-xl font-semibold ${type === 'error' ? 'text-red-600' : 'text-green-600'}`}>
           {type === 'error' ? 'Error' : 'Success'}
         </h2>

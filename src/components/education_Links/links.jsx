@@ -53,14 +53,14 @@ const Links = ({ handleNext, handleBack,handleChange ,formData }) => {
   };
 
 return (
-    <div className=" bg-background-Dark  text-white">
+    <div className=" bg-background-Dark h-full text-white">
       
-        <form className="">
+        <form className="flex h-full  flex-col justify-between">
            
             <div className="bg-black min-w-full ">
       
             <div className="space-y-2">
-                    <label className="block text-md mt-5">
+                    <label className="block text-md ">
                     CV <span className="text-red-500">*</span>
                     </label>
                     <input
