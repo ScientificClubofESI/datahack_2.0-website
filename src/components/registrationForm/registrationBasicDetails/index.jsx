@@ -33,16 +33,12 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
   
     if (!formData.firstName.trim()) {
       newErrors.firstName = "Please enter your first name";
-    }else if (!/^[a-zA-Z]+$/.test(formData.firstName)) {
-      newErrors.firstName = "First name should only contain letters";
     }
   
     if (!formData.lastName.trim()) {
       newErrors.lastName = "Please enter your last name";
     }
-    else if (!/^[a-zA-Z]+$/.test(formData.lastName)) {
-      newErrors.lastName = "Last name should only contain letters";
-    }
+   
   
     if (!formData.phoneNumber.trim()) {
       newErrors.phoneNumber = "Please enter your phone number";
@@ -148,7 +144,7 @@ const RegistrationBasicDetails = ({ handleNext, handleBack , handleChange ,formD
             name='phoneNumber'
             value={formData.phoneNumber}
             onChange={handleChange}
-            placeholder='+213 xxxxxxx'
+            placeholder='055555555'
           />
               {showErrors && errors.phoneNumber && (
                                 <span className="text-red-500 text-xs">{errors.phoneNumber}</span>
