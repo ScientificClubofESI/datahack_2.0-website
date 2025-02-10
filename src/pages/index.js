@@ -17,10 +17,11 @@ export default function Home() {
   <BackgroundShapes/>
     <Navbar/>
     <HomeSection/>
+    <Agenda/>
     <FAQ/>
     <Workshops/>
     <Mentors/>
-    <Agenda/>
+   
     <Partners/>
     <BackgroundShapes/>
     <Sponsors/>
