@@ -7,27 +7,27 @@ const FAQ = () => {
   const faqs = [
     {
       question: 'What is DataHack event ?',
-      answer: 'Lorem ipsum dolor sit amet consectetur. Consectetur et id sit suscipit sed. Ac arcu justo scelerisque nulla dolor lacus dui quis in. Eros vitae augue lectus nulla ultricies donec. Nunc ut quis ut ultricies.',
+      answer: 'DataHack 2025 is a 3-day datathon where teams tackle real-world challenges using AI and data science to develop innovative solutions and compete for top prizes.',
     },
     {
-      question: 'What is DataHack event ?',
-      answer: 'Lorem ipsum dolor sit amet consectetur. Consectetur et id sit suscipit sed. Ac arcu justo scelerisque nulla dolor lacus dui quis in. Eros vitae augue lectus nulla ultricies donec. Nunc ut quis ut ultricies.',
+      question: 'Who can participate in DataHack?',
+      answer: 'Everyone with a passion for data can join. No matter your skill level, if you love data, you\'re welcome!',
     },
     {
-      question: 'What is DataHack event ?',
-      answer: 'Lorem ipsum dolor sit amet consectetur. Consectetur et id sit suscipit sed. Ac arcu justo scelerisque nulla dolor lacus dui quis in. Eros vitae augue lectus nulla ultricies donec. Nunc ut quis ut ultricies.',
+      question: 'How does the competition work?',
+      answer: 'Teams of 5 get real datasets and choose from six challenges of varying difficulty. Points are awarded based on performance, with winners decided by total score.',
     },
     {
-      question: 'What is DataHack event ?',
-      answer: 'Lorem ipsum dolor sit amet consectetur. Consectetur et id sit suscipit sed. Ac arcu justo scelerisque nulla dolor lacus dui quis in. Eros vitae augue lectus nulla ultricies donec. Nunc ut quis ut ultricies.',
+      question: 'Where and when is the event held?',
+      answer: 'The event takes place at l’ecole supérieure Nationale d’informatique from February 20-22, 2025',
     },
     {
-      question: 'What is DataHack event ?',
-      answer: 'Lorem ipsum dolor sit amet consectetur. Consectetur et id sit suscipit sed. Ac arcu justo scelerisque nulla dolor lacus dui quis in. Eros vitae augue lectus nulla ultricies donec. Nunc ut quis ut ultricies.',
+      question: 'Are there workshops and mentoring?',
+      answer: 'Yes! Experts and mentors will guide participants through workshops and offer support throughout the event to help teams improve their solutions.',
     },
     {
-      question: 'What is DataHack event ?',
-      answer: 'Lorem ipsum dolor sit amet consectetur. Consectetur et id sit suscipit sed. Ac arcu justo scelerisque nulla dolor lacus dui quis in. Eros vitae augue lectus nulla ultricies donec. Nunc ut quis ut ultricies.',
+      question: 'What prizes and opportunities are available?',
+      answer: 'Winners receive exciting prizes, and participants gain networking opportunities with companies, mentors, and sponsors, plus a chance to showcase their skills',
     },
   ];
 
@@ -36,14 +36,12 @@ const FAQ = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black  z-10 flex items-center justify-center">
+    <div className="min-h-screen   z-10 flex items-center justify-center">
       <div className="max-w-3xl w-full md:p-12 ">
-        <div
-          className="border-2 border-transparent p-12 rounded-md"
-          style={{
-            borderImage: 'linear-gradient(90deg, #6F06C1, #4EA4F9, #36D9FF) 1',
-          }}
-        >
+      <div className="p-[2px] bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] rounded-lg">
+        <div className=" bg-black rounded-lg p-6">
+  
+ 
           <div className="space-y-2 mb-4 text-center">
             <h2 className="text-2xl font-bold text-Monotone-White">FAQ</h2>
             <h2 className="text-lg font-semibold text-Primary-300">// Questions</h2>
@@ -68,7 +66,10 @@ const FAQ = () => {
               </div>
             ))}
           </div>
+        
         </div>
+        </div>
+       
       </div>
     </div>
 
