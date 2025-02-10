@@ -10,7 +10,7 @@ const RegistrationComplete = ({hasTeam, teamName,teamCode}) => {
   return (
     <>
       {visible && (
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center h-full">
       
         <div className="  bg-black flex items-center flex-col justify-center">
           {/*  progression */}
