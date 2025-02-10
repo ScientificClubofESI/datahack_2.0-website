@@ -14,9 +14,9 @@ const MentorsSection = () => {
     {
       id: 2,
       name: "Nassim Ameur",
-      title: "Software Engineer - CSE",
-      role: "Full-Stack Developer",
-      description: "Passionate about building scalable web applications and creating interactive user experiences. Skilled in both front-end and back-end development.",
+      title: "5th year intelligent Systems and Data student at ESI",
+      role: "Research intern at	NYUAD",
+      description: "Specialized in RL",
       image: "/images/mentors/image3.jpg", 
     },
     {
