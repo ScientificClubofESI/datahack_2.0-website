@@ -58,9 +58,9 @@ const FormController = ({ onClose }) => {
 
   return (
     
-    <div className="fixed inset-0 z-50 p-2 flex md:flex-row  md:h-7/8 flex-col-reverse  justify-center items-end md:items-start gap-0 bg-black bg-opacity-80 font-semibold ">
+    <div className="fixed inset-0 z-50 p-2 flex md:flex-row  md:h-7/8 flex-col-reverse   justify-center  items-end md:items-start gap-0 bg-black bg-opacity-80 font-semibold ">
 
-    <div className="relative w-full max-w-4xl  h-full  bg-black shadow-[0_0_15px_rgba(136,232,255,0.4)] rounded-lg p-6 overflow-auto flex flex-col">
+    <div className="relative w-full max-w-4xl  h-full  bg-black shadow-[0_0_15px_rgba(136,232,255,0.4)]  rounded-lg p-6 overflow-auto flex flex-col">
 
 
         {step === 0 && <RegistrationBasicDetails handleNext={handleNext} handleChange={handleChange} formData={formData} />}
