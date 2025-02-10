@@ -28,7 +28,7 @@ const Workshops = ()=>{
                  shadow-[0_0_15px_rgba(136,232,255,0.4)]
                 
                 before:from-transparent before:to-[rgba(136,232,255,0.1)] before:opacity-0
-                hover:before:opacity-100 before:transition-opacity before:duration-300  rounded-2xl
+                hover:before:opacity-100 before:transition-opacity before:duration-300
                 ">
             COMING SOON !! 
           </div>
