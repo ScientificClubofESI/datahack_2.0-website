@@ -8,7 +8,11 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
   const [chaine, setChaine] = useState(joinTeam ? 'teamCode' : 'teamName');
   const [errors, setErrors] = useState({});
   const [showErrors, setShowErrors] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [completed, setCompleted] = useState(false);
+  const [teamName , setTeamName] = useState('');
+  const [teamCode , setTeamCode] = useState('');
 
 
   useEffect(() => {
@@ -53,10 +57,30 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
 
   const handleSubmit = async () => {
     try {
-      await axios.post('https://datahack-form-backend.onrender.com/api/users', formData);
+      if (isSubmitting) return;
+      setIsSubmitting(true);
+      setErrorMessage("");
+     
+
+      const response = await axios.post('https://datahack-form-backend.onrender.com/api/users', formData);
+      
       setCompleted(true);
+      setTeamName(response.data.teamName || '');
+      setTeamCode(response.data.teamCode || '');
+
     } catch (error) {
       console.error('Error:', error.response?.data || error.message);
+      if (error.code === "ECONNABORTED") {
+        setErrorMessage("Request timed out. Please try again.");
+       }else if (error.response?.status === 400 && error.response.data.message.includes("Team not found")) {
+        setErrorMessage("Team code does not exist. Please enter a valid code.");
+       }
+        else {
+        setErrorMessage(error.response?.data?.message || "An error occurred. Please try again.");
+       }
+    }
+    finally {
+      setIsSubmitting(false); // Re-enable button in case of failure
     }
   };
 
@@ -81,15 +105,22 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
   }
 
   return completed ? (
+    
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ">
+
       <div className="relative w-full max-w-4xl overflow-y-auto">
         <div className="absolute right-0 cursor-pointer p-4 z-50" onClick={onClose}>
           <span className="text-white font-bold text-2xl">X</span>
         </div>
-        <RegistrationComplete hasTeam={hasTeam} teamName={formData.teamName} teamCode={formData.teamCode} />
+        <RegistrationComplete hasTeam={hasTeam} teamName={teamName} teamCode={teamCode} />
+        <div>
+          
+        </div>
       </div>
     </div>
   ) : (
+    <>
+    <Popup message={errorMessage} type="error" onClose={() => setErrorMessage("")} />
     <div className="bg-black top-0 p-8 md:text-lg text-sm">
       <div className="flex flex-col items-start  w-full max-w-3xl mx-auto">
         <div className="flex md:flex-row flex-col justify-center gap-2 h-10 mb-8 ">
@@ -191,11 +222,31 @@ export default function Team({ handleNext, handleBack, handleChange, formData, o
     className={`bg-purple-700 text-white flex px-6 py-2 rounded items-center justify-center  ${!isFormComplete() ? 'opacity-50 cursor-not-allowed' : ''} `}
 >    
  <div className='flex flex-row gap-2 justify-center items-center'>
- <span className='hidden md:flex'>Submit </span>
+ <span className='hidden md:flex'> {isSubmitting ? 'Submitting...' : 'Submit'} </span>
 
  </div>
 </button>
  </div>
     </div>
+    </>
+   
   );
 }
+
+const Popup = ({ message, type, onClose }) => {
+  if (!message) return null;
+
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+      <div className={`bg-white p-6 rounded-lg shadow-lg max-w-sm text-center border ${type === 'error' ? 'border-red-500' : 'border-green-500'}`}>
+        <h2 className={`text-xl font-semibold ${type === 'error' ? 'text-red-600' : 'text-green-600'}`}>
+          {type === 'error' ? 'Error' : 'Success'}
+        </h2>
+        <p className="text-gray-700 mt-2">{message}</p>
+        <button onClick={onClose} className={`mt-4 px-4 py-2 rounded-md text-white ${type === 'error' ? 'bg-red-500' : 'bg-green-500'}`}>
+          Close
+        </button>
+      </div>
+    </div>
+  );
+};
