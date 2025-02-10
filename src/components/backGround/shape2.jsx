@@ -2,23 +2,24 @@ import React from 'react';
 import Image from "next/image";
 
 
-const BackgroundShapes = () => (
+const BackgroundShapes_two = () => (
   <div className=" top-0 inset-0 pointer-events-none z-0">
     <Image 
-      src="/images/background/shape1.png"
+      src="/images/background/shape4.png"
       alt="" 
-      width={200}
-      height={200}
+      width={400}
+      height={500}
       className="absolute  opacity-20" 
     />
     <Image 
-      src="/images/background/shape2.png"
+      src="/images/background/shape3.png"
       alt="" 
-      width={1200}
-      height={2000}
+      width={600}
+      height={900}
       className="absolute right-0 opacity-20" 
     />
   </div>
 );
 
-export default BackgroundShapes;
+export default BackgroundShapes_two;
+
