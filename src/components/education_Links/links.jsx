@@ -53,19 +53,11 @@ const Links = ({ handleNext, handleBack,handleChange ,formData }) => {
   };
 
 return (
-    <div className=" bg-background-Dark min-h-screen text-white">
+    <div className=" bg-background-Dark  text-white">
       
-        <form className="max-w-5xl mx-auto md:pt-8 md:px-4">
-            <div className="absolute w-1/2 md:w-5/12 h-1 bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] mt-0 z-10"></div>
-            <div className="absolute z-10 mt-3 flex gap-14 mb-12 flex-center ml-8">
-                <span className="hidden md:flex text-[#530490]">Basic Details</span>
-                <span className="text-[#530490] hidden md:flex">Skills & Interests</span>
-                <span className="text-[#530490] hidden md:flex">Education</span>
-                <span className="text-xl bg-gradient-to-r from-[#6F06C1] via-[#4EA4F9] to-[#36D9FF] bg-clip-text text-transparent">
-                    Links
-                </span>
-            </div>
-            <div className="bg-black min-w-full px-5 md:px-28 pb-12 md:pb-20 pt-24">
+        <form className="">
+           
+            <div className="bg-black min-w-full ">
       
             <div className="space-y-2">
                     <label className="block text-md mt-5">
@@ -151,30 +143,32 @@ return (
                 </div>
             </div>
 
-            <div className="flex justify-between pt-12 md:pt-0 md:mt-5 bg-background-Dark">
-                <button
-                    type="button"
-                    onClick={handleBack}
-                    className="bg-purple-700 text-white px-6 py-2 rounded flex items-center ml-7 md:ml-0 w-16 h-7"
-                >
-                    <span className="mr-2 text-xl rotate-[180deg] mt-2">➜</span>
-                </button>
-                <button
-                    type="button"
-                    onClick={() => {
-                      if (validateForm()) {
-                        handleNext();
-                      }
-                    }}
-                    disabled={!isFormComplete()}
-                    className={`bg-purple-700 text-white flex px-6 py-2 rounded items-center justify-center h-7 w-16 md:w-44 ${
-                        !isFormComplete() ? "opacity-50 cursor-not-allowed" : ""
-                    } mb-24 mr-7 md:mr-0`}
-                >
-                    <span className="hidden md:flex">Next</span>
-                    <span className="ml-2 text-xl">➜</span>
-                </button>
-            </div>
+            <div className="flex justify-between  ">
+                    <button 
+                        onClick={handleBack}
+                        type="button" 
+                        className="bg-purple-700 px-4 text-white   rounded flex items-center justify-center  "
+                    >
+                        <span className=" text-sm rotate-[180deg]  flex  ">➜</span> 
+                    </button>
+
+
+  <button 
+    type="button"
+    onClick={() => {
+        if (validateForm()) {
+          handleNext();
+        }
+      }} 
+    disabled={!isFormComplete()}
+    className={`bg-purple-700 text-white flex px-6 py-2 rounded items-center justify-center  ${!isFormComplete() ? 'opacity-50 cursor-not-allowed' : ''} `}
+>    
+ <div className='flex flex-row gap-2 justify-center items-center'>
+ <span className='hidden md:flex'>Next </span>
+ <span className=" text-sm">➜</span>
+ </div>
+</button>
+ </div>
         </form>
     </div>
 );

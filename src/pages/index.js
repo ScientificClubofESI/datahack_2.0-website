@@ -6,6 +6,7 @@ import HomeSection from "@/components/home";
 import Mentors from "@/components/mentors";
 import Navbar from "@/components/navbar";
 import Partners from "@/components/partners";
+import Navbar_popup from "@/components/registrationForm/navbar_popup";
 import Sponsors from "@/components/sponsors";
 import Workshops from "@/components/workshops";
 

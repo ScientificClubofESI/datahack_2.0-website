@@ -57,8 +57,8 @@ const FormController = ({ onClose }) => {
 
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
+      <div className="relative w-full max-w-4xl h-3/4  overflow-y-auto">
         <div className="absolute right-0 cursor-pointer p-4 z-50" onClick={onClose}>
           <span className="text-white font-bold text-2xl">X</span>
         </div>
