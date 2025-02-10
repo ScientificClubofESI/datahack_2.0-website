@@ -65,7 +65,7 @@ export default function NavBar() {
   return (
     <>
       {/* Navbar */}
-      <nav className="top-0 z-10 fixed w-full text-white font-bold backdrop-blur-md bg-gradient-to-r from-background-Dark/80 to-background-Dark/50 border-b border-gray-700 shadow-lg">
+      <nav className="top-0 z-50 fixed w-full text-white font-bold backdrop-blur-md bg-gradient-to-r from-background-Dark/80 to-background-Dark/50 border-b border-gray-700 shadow-lg">
         <div className="flex justify-between items-center px-6 lg:px-20 py-4">
           {/* Logo */}
           <div className="flex items-center">
