@@ -88,7 +88,7 @@ return (
                         type="text"
                         name="Github"
                         placeholder="Link to your github"
-                        value={formData.Github}
+                        value={formData.github}
                         onChange={handleChange}
                         className={`w-full p-2 rounded bg-white border ${
                             showErrors && errors.Github ? "border-red-500" : "border-gray-700"
@@ -107,7 +107,7 @@ return (
                         type="text"
                         name="Kaggle"
                         placeholder="Link to your kaggle"
-                        value={formData.Kaggle}
+                        value={formData.kaggle}
                         onChange={handleChange}
                         className={`w-full p-2 rounded bg-white border ${
                             showErrors && errors.Kaggle ? "border-red-500" : "border-gray-700"
