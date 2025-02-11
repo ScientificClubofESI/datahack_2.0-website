@@ -21,13 +21,13 @@ const Links = ({ handleNext, handleBack,handleChange ,formData }) => {
     }
 
     // Validate major
-    if (!formData.Github) {
-      newErrors.Github = "Please enter your Github";
+    if (!formData.github) {
+      newErrors.github = "Please enter your Github";
     }
 
     // Validate degree
-    if (!formData.Kaggle) {
-      newErrors.Kaggle = "Please select your Kaggle";
+    if (!formData.kaggle) {
+      newErrors.kaggle = "Please select your Kaggle";
     }
 
     // Validate graduation year
@@ -44,8 +44,8 @@ const Links = ({ handleNext, handleBack,handleChange ,formData }) => {
   const isFormComplete = () => {
     // Check if all required fields are filled and the CV is uploaded correctly
     return (
-      formData.Github !== "" &&
-      formData.Kaggle !== "" &&
+      formData.github !== "" &&
+      formData.kaggle !== "" &&
       formData.LinkedIn !== "" &&
       formData.cv !== ""// Ensure the CV is uploaded
     
@@ -91,11 +91,11 @@ return (
                         value={formData.github}
                         onChange={handleChange}
                         className={`w-full p-2 rounded bg-white border ${
-                            showErrors && errors.Github ? "border-red-500" : "border-gray-700"
+                            showErrors && errors.github ? "border-red-500" : "border-gray-700"
                         } text-black`}
                     />
-                    {showErrors && errors.Github && (
-                        <span className="text-red-500 text-xs">{errors.Github}</span>
+                    {showErrors && errors.github && (
+                        <span className="text-red-500 text-xs">{errors.github}</span>
                     )}
                 </div>
 
@@ -110,11 +110,11 @@ return (
                         value={formData.kaggle}
                         onChange={handleChange}
                         className={`w-full p-2 rounded bg-white border ${
-                            showErrors && errors.Kaggle ? "border-red-500" : "border-gray-700"
+                            showErrors && errors.kaggle ? "border-red-500" : "border-gray-700"
                         } text-black`}
                     />
-                    {showErrors && errors.Kaggle && (
-                        <span className="text-red-500 text-xs">{errors.Kaggle}</span>
+                    {showErrors && errors.kaggle && (
+                        <span className="text-red-500 text-xs">{errors.kaggle}</span>
                     )}
                 </div>
 
