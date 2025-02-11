@@ -86,7 +86,7 @@ return (
                     </label>
                     <input
                         type="text"
-                        name="Github"
+                        name="github"
                         placeholder="Link to your github"
                         value={formData.github}
                         onChange={handleChange}
@@ -105,7 +105,7 @@ return (
                     </label>
                     <input
                         type="text"
-                        name="Kaggle"
+                        name="kaggle"
                         placeholder="Link to your kaggle"
                         value={formData.kaggle}
                         onChange={handleChange}
