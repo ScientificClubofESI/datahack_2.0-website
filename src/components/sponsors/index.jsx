@@ -35,13 +35,14 @@ const Sponsors = () => {
           height={100}
         />
  </a>
-
+ <a href="https://www.itexcgroup.com">
   <Image
           src={yalidine} // sponsors images
           alt="yalidine-img"
           width={200}
           height={42.43}
         />
+       </a>
 
       </div>
     </section>
