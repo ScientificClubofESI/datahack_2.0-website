@@ -7,7 +7,6 @@ const hubotSans = Hubot_Sans({
 import Image from "next/image";
 import logoHi from "./images/Group-H-lockup-black.svg";
 import yalidine from "./images/IMG_1540 1.png";
-import asa from "./images/Frame44648.svg";
 import ourquilane from "./images/IMG_1541 (1) 1 (1).png";
 
 const Sponsors = () => {
@@ -18,34 +17,32 @@ const Sponsors = () => {
       >
         sponsored by
       </h2>
-      <div className=" grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-16  items-center">
-      <Image
+      <div className="  flex md:flex-row  flex-col gap-16 items-center">
+  
+      <a href="https://www.itexcgroup.com">
+ <Image
           src={logoHi} // sponsors images
           alt="BDL-img"
           width={200}
           height={100}
         />
-        <Image
+ </a>
+ <a href="https://yalidine.com">
+ <Image
           src={ourquilane} // sponsors images
           alt="ourquilane-img"
           width={200}
           height={100}
         />
-        <Image
+ </a>
+
+  <Image
           src={yalidine} // sponsors images
           alt="yalidine-img"
           width={200}
           height={42.43}
         />
-        <Image
-          src={asa} // sponsors images
-          alt="asa-img"
-          width={200}
-          height={100}
-        />
-        
-        
-        
+
       </div>
     </section>
   );
