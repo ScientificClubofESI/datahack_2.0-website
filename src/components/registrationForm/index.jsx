@@ -6,6 +6,7 @@ import InputFrame from './motivation/motivation';
 import Team from './motivation/team';
 import Education from '../education_Links/education';
 import Navbar_popup from './navbar_popup';
+import RegistrationClosed from './regisrtationComplete/closed';
 
 
 
@@ -64,16 +65,17 @@ const FormController = ({ onClose }) => {
   
     <div className="relative w-full max-w-4xl  h-full  bg-black shadow-[0_0_15px_rgba(136,232,255,0.4)]  rounded-lg p-6 overflow-auto flex flex-col">
    
-    <Navbar_popup num={step} />
-   <div className='h-full   mt-20'>
-        {step === 0 && <RegistrationBasicDetails handleNext={handleNext} handleChange={handleChange} formData={formData} />}
-        {step === 1 && <SkillsInterests handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
+   {/*  <Navbar_popup num={step} />*/}
+   <div className='h-full   '>
+   {step === 0 && <RegistrationClosed />}
+         {/* {step === 0 && <RegistrationBasicDetails handleNext={handleNext} handleChange={handleChange} formData={formData} />}
+       {step === 1 && <SkillsInterests handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
         {step === 2 && <Education handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
         {step === 3 && <Links handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
         {step === 4 && <InputFrame handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} />}
         {step === 5 && <Team handleBack={handleBack} handleNext={handleNext} handleChange={handleChange} formData={formData} onClose={onClose} />}
  
- 
+ */}
       
    </div>
     
